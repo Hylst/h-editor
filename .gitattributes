@@ -1,0 +1,13 @@
+# Normalisation des fins de ligne — le dépôt stocke LF, le checkout suit l'OS.
+* text=auto
+
+# Scripts shell / CI toujours LF
+*.sh text eol=lf
+*.yml text eol=lf
+
+# Binaires — jamais de conversion
+*.png binary
+*.jpg binary
+*.ico binary
+*.woff binary
+*.woff2 binary
