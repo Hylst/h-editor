@@ -15,7 +15,7 @@ editorx-zen-code-main/
 ├── src/                    # Code source applicatif
 │   ├── assets/fonts/       # JetBrains Mono auto-hébergée (8 woff2)
 │   ├── components/         # Composants React (Editor + UI shadcn)
-│   ├── hooks/              # Hooks React personnalisés (7 fichiers)
+│   ├── hooks/              # Hooks React personnalisés (8 fichiers)
 │   ├── pages/              # Pages routées (Index, NotFound)
 │   ├── services/workspace/ # Contrat de stockage (back-end ready)
 │   ├── styles/             # fonts.css (@font-face locales)
@@ -81,7 +81,8 @@ src/
 │   ├── useSplitLayout.ts              # Vue divisée, panneau actif, persistance
 │   ├── useSearch.ts                   # Pilote le Web Worker de recherche (repli synchrone)
 │   ├── useVirtualList.ts              # Fenêtrage de liste (> 300 entrées), sans dépendance
-│   └── useKeyboardShortcuts.ts        # Raccourcis globaux, ignorés dans les champs UI
+│   ├── useKeyboardShortcuts.ts        # Raccourcis globaux, ignorés dans les champs UI
+│   └── useInstallPrompt.ts            # Capture `beforeinstallprompt`, déclenche l'installation PWA
 │
 ├── services/workspace/
 │   ├── types.ts                       # Contrat WorkspaceStore (load/save/clear/estimate/…)
@@ -110,6 +111,7 @@ src/
 │   ├── previewConsole.ts              # Pont console postMessage de l'aperçu (+ tests)
 │   ├── binarySafety.test.ts           # Garde anti-traitement texte des binaires
 │   ├── fileNames.ts                   # Unicité et validation des noms (+ tests)
+│   ├── installPrompt.ts               # Décision d'affichage du bouton « Installer » PWA (pur, + tests)
 │   ├── monacoSetup.ts                 # Monaco auto-hébergé + web workers (aucun CDN)
 │   ├── templates.ts                   # 14 modèles de fichiers (dont site complet 3 fichiers)
 │   ├── snippets.ts                    # Extraits de code par langage (Monaco)
@@ -133,7 +135,7 @@ src/
 └── vite-env.d.ts
 ```
 
-Tests unitaires colocalisés (`*.test.ts`) : 12 fichiers, **139 tests** — voir la section Tests.
+Tests unitaires colocalisés (`*.test.ts`) : 13 fichiers, **144 tests** — voir la section Tests.
 
 ---
 
@@ -403,8 +405,8 @@ Deux couches, exécutées par `npm run test:all` :
 
 | Type | Emplacement | Volume | Commande |
 |------|-------------|--------|----------|
-| Unitaires (Vitest + jsdom ; Node pour compression) | `src/**/*.test.ts` — 12 fichiers | **139 tests** | `npm run test:run` |
-| E2E (Playwright) | `e2e/*.spec.ts` — 7 specs + `helpers.ts` | **120 tests** | `npm run test:e2e` |
+| Unitaires (Vitest + jsdom ; Node pour compression) | `src/**/*.test.ts` — 13 fichiers | **144 tests** | `npm run test:run` |
+| E2E (Playwright) | `e2e/*.spec.ts` — 7 specs + `helpers.ts` | **121 tests** | `npm run test:e2e` |
 
 Fichiers E2E :
 

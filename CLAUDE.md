@@ -85,6 +85,8 @@ or hook changes. Keep that boundary intact.
 | `src/utils/fileSystem.ts` | Disk I/O and language detection |
 | `src/types/settings.ts` | `EditorSettings` + `sanitizeSettings` (never trust stored JSON) |
 | `src/hooks/useKeyboardShortcuts.ts` | Global hotkeys, ignored inside UI text fields |
+| `src/hooks/useInstallPrompt.ts` | Captures `beforeinstallprompt`, triggers PWA install (button in the status bar) |
+| `src/utils/installPrompt.ts` | Pure `shouldShowInstallButton()` decision, tested in Vitest |
 
 ### Performance invariants
 

@@ -7,7 +7,7 @@ Un éditeur de code en ligne moderne, rapide et 100 % front-end, construit avec 
 ![React](https://img.shields.io/badge/React-18.3-61dafb.svg)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.8-3178c6.svg)
 ![Vite](https://img.shields.io/badge/Vite-8.0-646cff.svg)
-![Tests](https://img.shields.io/badge/tests-139%20unitaires%20%2B%20120%20E2E-brightgreen.svg)
+![Tests](https://img.shields.io/badge/tests-144%20unitaires%20%2B%20121%20E2E-brightgreen.svg)
 
 EditorX est un IDE léger qui tient dans votre navigateur : pas de backend, pas de tracking, **aucune requête vers un tiers** (Monaco et les polices sont embarqués). Vos fichiers restent sur votre machine — métadonnées en `localStorage`, contenu en `IndexedDB`, écriture disque via la File System Access API. Pensé pour le développeur qui veut éditer, prototyper, prévisualiser sans installer un IDE complet.
 

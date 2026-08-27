@@ -53,7 +53,7 @@ export default defineConfig(() => ({
         scope: "/app/",
         lang: "fr",
         orientation: "any",
-        categories: ["productivity", "developer", "utilities"],
+        id: "/app/",
         icons: [
           { src: "favicon.ico", sizes: "32x32", type: "image/x-icon" },
           { src: "icon.svg", sizes: "any", type: "image/svg+xml", purpose: "any" },
@@ -91,6 +91,13 @@ export default defineConfig(() => ({
             type: "image/png",
             form_factor: "wide",
             label: "EditorX — IDE professionnel dans votre navigateur",
+          },
+          {
+            src: "og-image.png",
+            sizes: "1200x630",
+            type: "image/png",
+            form_factor: "narrow",
+            label: "EditorX sur mobile",
           },
         ],
       },
@@ -134,8 +141,12 @@ export default defineConfig(() => ({
             },
           },
         ],
-        // Pas de navigateFallback — Nginx gère le routage SPA
-        navigateFallback: null,
+        // Fallback offline si la navigation n'est pas dans le cache.
+        // Nginx gère le routage SPA en ligne ; le SW fournit la page
+        // offline.html uniquement quand le réseau est absent.
+        // Chemin absolu préfixé par la base `/app/` (déploiement sous /app/).
+        navigateFallback: "/app/offline.html",
+        navigateFallbackDenylist: [/^\/api\//, /\.\w+$/],
       },
       devOptions: {
         enabled: false,

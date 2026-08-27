@@ -17,8 +17,14 @@ test.describe('Affichage mobile', () => {
 
   test('l’explorateur peut être replié pour libérer l’écran', async ({ page }) => {
     const explorer = page.getByRole('complementary', { name: 'Explorateur de fichiers' });
+    // Sur mobile, l'explorateur démarre replié par défaut pour laisser la place à l'éditeur.
+    await expect(explorer).toBeHidden();
+
+    // On peut toujours l'ouvrir…
+    await page.getByRole('button', { name: "Afficher l'explorateur" }).first().click();
     await expect(explorer).toBeVisible();
 
+    // …puis le re-replier pour récupérer toute la largeur.
     await page.getByRole('button', { name: "Masquer l'explorateur" }).first().click();
     await expect(explorer).toBeHidden();
 

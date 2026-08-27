@@ -14,19 +14,19 @@ vers un tiers. React 18 + TypeScript strict + Vite + Monaco, déployé sous `/ap
 
 ```bash
 npm run dev              # http://localhost:8080/app/
-npm run test:all         # lint + types + 139 tests unitaires + 120 E2E
+npm run test:all         # lint + types + 144 tests unitaires + 121 E2E
 npm run test:e2e:chromium  # itération rapide sur un seul moteur
 ```
 
 | Indicateur | Valeur |
 |---|---|
-| Tests unitaires (Vitest) | **139** |
-| Tests E2E (Playwright, 4 profils) | **120** |
+| Tests unitaires (Vitest) | **144** |
+| Tests E2E (Playwright, 4 profils) | **121** |
 | ESLint | 0 erreur, 4 avertissements de convention shadcn |
 | TypeScript | `strict: true`, 0 erreur |
 | `npm audit --omit=dev` | 0 vulnérabilité |
 | Chunk d'entrée | ~180 Ko (mesuré 08/2026) |
-| Précache du service worker | 36 entrées, ~5,3 Mo (mesuré 08/2026) |
+| Précache du service worker | 37 entrées, ~5,5 Mo (mesuré 08/2026) |
 
 ---
 
@@ -87,7 +87,8 @@ src/
 │   ├── useSplitLayout.ts     Vue divisée
 │   ├── useSearch.ts          Pilote le Web Worker de recherche
 │   ├── useVirtualList.ts     Fenêtrage de liste, sans dépendance
-│   └── useKeyboardShortcuts.ts  Raccourcis globaux (ignorés dans les champs UI)
+│   ├── useKeyboardShortcuts.ts  Raccourcis globaux (ignorés dans les champs UI)
+│   └── useInstallPrompt.ts   Capture `beforeinstallprompt`, bouton « Installer » (barre d'état)
 ├── services/workspace/       Contrat de stockage (prêt pour un backend)
 ├── workers/search.worker.ts  Recherche hors du thread principal
 └── utils/

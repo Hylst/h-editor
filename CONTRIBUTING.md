@@ -24,7 +24,7 @@ npm run dev        # http://localhost:8080/app/ — le /app/ final est obligatoi
 ```bash
 npm run lint        # ESLint — 0 erreur exigée (les 4 avertissements shadcn existants tolérés)
 npm run typecheck   # tsc --noEmit — strict: true, noUnusedLocals/Parameters actifs
-npm run test:run    # 139 tests unitaires Vitest
+npm run test:run    # 144 tests unitaires Vitest
 npm run test:e2e    # Build + Playwright (Chromium, Firefox, WebKit, Pixel 7)
 ```
 

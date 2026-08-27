@@ -10,7 +10,7 @@ npm run dev                # Serveur de développement — http://localhost:8080
 npm run build              # Build de production → ./dist/
 npm run lint               # ESLint (doit rester à 0 erreur)
 npm run typecheck          # tsc --noEmit, mode strict
-npm run test:run           # 139 tests unitaires (Vitest), une passe
+npm run test:run           # 144 tests unitaires (Vitest), une passe
 npm run test:e2e:chromium  # E2E sur Chromium seul — itération rapide
 npm run test:e2e           # E2E sur Chromium, Firefox, WebKit, Pixel 7
 npm run test:all           # Tout, dans l'ordre

@@ -1,10 +1,11 @@
 import { useEffect, useMemo, useState } from 'react';
-import { AlertTriangle, Check, FileText, Loader2, MapPin, Settings, X } from 'lucide-react';
+import { AlertTriangle, Check, Download, FileText, Loader2, MapPin, Settings, X } from 'lucide-react';
 import type { EditorFile } from '@/types/editor';
 import type { StorageStatus } from '@/hooks/useWorkspace';
 import type { StorageUsage } from '@/services/workspace';
 import type { SplitView } from '@/hooks/useSplitLayout';
 import { Button } from '@/components/ui/button';
+import { useInstallPrompt } from '@/hooks/useInstallPrompt';
 import { APP_VERSION } from '@/utils/appInfo';
 
 interface StatusBarProps {
@@ -78,6 +79,7 @@ const StatusBar = ({
   fileCount,
   onOpenSettings,
 }: StatusBarProps) => {
+  const { canInstall, install } = useInstallPrompt();
   const stats = useMemo(() => {
     if (!activeFile) return null;
     // Compter « mots » et « lignes » sur du base64 n'aurait aucun sens.
@@ -171,6 +173,21 @@ const StatusBar = ({
         </span>
         <span className="h-3 w-px bg-editor-border" aria-hidden="true" />
         <span>UTF-8</span>
+        {canInstall && (
+          <>
+            <span className="h-3 w-px bg-editor-border" aria-hidden="true" />
+            <button
+              type="button"
+              onClick={install}
+              className="flex items-center gap-1 hover:text-editor-text"
+              aria-label="Installer EditorX sur cet appareil"
+              title="Installer l'application sur cet appareil"
+            >
+              <Download className="h-3 w-3" aria-hidden="true" />
+              Installer
+            </button>
+          </>
+        )}
         <span className="h-3 w-px bg-editor-border" aria-hidden="true" />
         <button
           type="button"

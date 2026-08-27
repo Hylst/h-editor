@@ -39,7 +39,7 @@ Détail complet dans [plan.md](./plan.md) et [changelog.md](./changelog.md).
 
 - [x] **Favicon harmonisé** : `public/favicon.ico` (32×32 PNG-in-ICO), `public/icon.svg` (scalable) — générés depuis le logo "E" bleu via `npm run icons:build`
 - [x] **PWA icons** : `icon-192.png` et `icon-512.png` dans `public/`, référencés dans manifest et `index.html`
-- [x] **PWA service worker** : `vite-plugin-pwa` + Workbox ; précache mesuré au 25/08/2026 : **36 entrées, ~5,3 Mo** (Monaco inclus, hors ligne réel vérifié par `e2e/offline.spec.ts`)
+- [x] **PWA service worker** : `vite-plugin-pwa` + Workbox ; précache mesuré au 25/08/2026 : **37 entrées, ~5,5 Mo** (Monaco inclus, hors ligne réel vérifié par `e2e/offline.spec.ts`)
 
 ## ✅ Récemment terminé (v1.0.1)
 
@@ -85,8 +85,8 @@ Détail complet dans [plan.md](./plan.md) et [changelog.md](./changelog.md).
 - [x] Service worker Workbox avec précache (`vite-plugin-pwa@1.3.0`) — fait en 1.0.2
 - [x] Web App Manifest enrichi (installable, shortcuts, screenshot, display_override) — fait en 1.0.2
 - [x] Cache stratégique des assets Monaco (`maximumFileSizeToCacheInBytes: 3 MB`) — fait en 1.0.2
-- [ ] Page offline (`public/offline.html`) — l'app fonctionne déjà hors ligne, reste le cas d'une URL inconnue
-- [ ] Prompt d'installation (`beforeinstallprompt`) dans la barre de statut
+- [x] Page offline (`public/offline.html`) — servie par le service worker (`navigateFallback`) quand le réseau est absent
+- [x] Prompt d'installation (`beforeinstallprompt`) dans la barre de statut
 
 ### Édition avancée
 - [ ] Emmet pour HTML/CSS
@@ -174,7 +174,7 @@ Détail complet dans [plan.md](./plan.md) et [changelog.md](./changelog.md).
 
 ### Dette technique (état après 1.1.0)
 - ~~`EditorLayout.tsx` à 1494 LOC~~ → découpé en hooks (composition ~1 226 LOC au 08/2026)
-- ~~Aucun test automatisé~~ → **139 tests unitaires + 120 tests E2E Playwright** (7 specs)
+- ~~Aucun test automatisé~~ → **144 tests unitaires + 121 tests E2E Playwright** (7 specs)
 - ~~Pas de CI/CD~~ → workflow CI en place ; déploiement encore manuel
 - `Index.tsx` est un wrapper trivial — à inliner ou justifier
 - ~~Panneaux latéraux à largeur fixe~~ → redimensionnables depuis la 1.5.0 (`ResizeHandle`)

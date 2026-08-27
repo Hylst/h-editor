@@ -7,6 +7,38 @@ et ce projet adhère au [Semantic Versioning](https://semver.org/lang/fr/).
 
 ---
 
+## [Unreleased]
+
+Améliorations PWA et affichage mobile.
+
+### ✅ Page de fallback hors ligne (Added)
+
+`public/offline.html` est désormais servie par le service worker (`navigateFallback`) quand une
+navigation échoue faute de réseau. La page précise qu'EditorX fonctionne hors ligne et offre un
+lien de retour vers l'éditeur. Le fallback n'intercepte ni les appels `/api/` ni les fichiers à
+extension (les assets 404 ne sont pas masqués par la page hors ligne).
+
+### 📲 Prompt d'installation PWA (Added)
+
+Bouton **« Installer »** dans la barre de statut, affiché uniquement quand le navigateur émet
+`beforeinstallprompt` (PWA installable, application pas encore installée). Nouveau hook
+`useInstallPrompt` qui capture l'événement et déclenche le prompt.
+
+### 📱 Explorateur replié par défaut sur mobile (Changed)
+
+Sur écran étroit (< 768 px), l'explorateur démarre replié pour laisser la place à l'éditeur.
+L'utilisateur peut toujours l'ouvrir via Ctrl+B ou le bouton de la barre d'outils. Le test E2E
+responsive a été adapté pour couvrir ce nouveau comportement.
+
+### 📦 Manifest et installabilité iOS (Changed)
+
+- `id` explicite (`/app/`) dans le manifest PWA ;
+- second screenshot au format portrait (`narrow`) ;
+- balises iOS ajoutées dans `index.html` (`apple-mobile-web-app-capable`,
+  `apple-mobile-web-app-status-bar-style`, icône 512 px).
+
+---
+
 ## [1.7.0] - 2026-08-24
 
 Phase 4 de l'aperçu de site : la prévisualisation devient un véritable outil de mise au point.
@@ -541,8 +573,8 @@ Voir [todo.md](./todo.md) pour la liste complète. Priorités :
 
 ### v1.2.0 (moyen terme)
 - [x] ~~Conversion en **PWA** (service worker, manifest)~~ — fait en 1.0.2 (`vite-plugin-pwa`, Workbox, manifest enrichi)
-- [ ] Page de fallback **offline** (`public/offline.html`) servie par le service worker quand le réseau est absent
-- [ ] Prompt d'installation PWA (événement `beforeinstallprompt`) dans la barre de statut
+- [x] Page de fallback **offline** (`public/offline.html`) — `navigateFallback` configuré dans `vite.config.ts`
+- [x] Prompt d'installation PWA (événement `beforeinstallprompt`) dans la barre de statut — `useInstallPrompt` hook + bouton « Installer »
 - [ ] Intégration **Sentry** opt-in pour monitoring prod
 - [x] ~~Internationalisation (i18n) FR/EN~~ — abandonné (décision produit, 2026-08)
 - [ ] Drag & drop pour réorganiser les onglets

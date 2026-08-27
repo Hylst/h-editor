@@ -179,7 +179,7 @@ caractères interdits, appliquée à la création, au renommage, à la duplicati
 - ⬜️ Édition d'un dossier réel du disque via `showDirectoryPicker()` (la fonction existe, non branchée).
 - ⬜️ Snippets et modèles de fichiers par langage.
 - ⬜️ Diff local (avant/après enregistrement).
-- ⬜️ Invite d'installation PWA (`beforeinstallprompt`) et page hors ligne dédiée.
+- [x] Invite d'installation PWA (`beforeinstallprompt`) et page hors ligne dédiée.
 
 **À décider**
 - 🟡 Sort des variables `VITE_*` inutilisées de `.env` / `.env.local` (clés d'API réelles, non lues par le code).

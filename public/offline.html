@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EditorX — Hors ligne</title>
+    <meta name="robots" content="noindex" />
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body {
+        font-family: system-ui, -apple-system, sans-serif;
+        background: #0f1419;
+        color: #e5e7eb;
+        min-height: 100dvh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .container {
+        text-align: center;
+        max-width: 32rem;
+        padding: 2rem;
+      }
+      h1 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 0.75rem;
+      }
+      p {
+        color: #9ca3af;
+        margin-bottom: 1.5rem;
+        line-height: 1.6;
+      }
+      a {
+        display: inline-block;
+        padding: 0.625rem 1.5rem;
+        background: #3b82f6;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 0.5rem;
+        font-weight: 500;
+        transition: background 0.15s;
+      }
+      a:hover { background: #2563eb; }
+      .icon {
+        width: 3rem;
+        height: 3rem;
+        margin: 0 auto 1rem;
+        opacity: 0.6;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+        <path d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126ZM12 15.75h.007v.008H12v-.008Z" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+      <h1>Vous êtes hors ligne</h1>
+      <p>
+        EditorX fonctionne hors ligne grâce au cache de votre navigateur,
+        mais cette page n'a pas pu être chargée.
+      </p>
+      <a href="/app/">Retour à l'éditeur</a>
+    </div>
+  </body>
+</html>

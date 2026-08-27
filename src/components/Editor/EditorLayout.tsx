@@ -103,6 +103,15 @@ const EditorLayout = () => {
   const [pendingDeletion, setPendingDeletion] = useState<PendingDeletion | null>(null);
   const [isBusy, setIsBusy] = useState<string | null>(null);
 
+  // Sur écran étroit (< 768px, breakpoint md de Tailwind), on masque l'explorateur au
+  // chargement : il occupe une largeur fixe (défaut 256px) qui mangerait 68% de l'écran.
+  // L'utilisateur peut toujours le rouvrir avec Ctrl+B ou le bouton de la barre d'outils.
+  useEffect(() => {
+    if (window.matchMedia('(max-width: 767px)').matches) {
+      setSidebarVisible(false);
+    }
+  }, []);
+
   const mainEditorRef = useRef<MonacoEditorRef>(null);
   const topLeftEditorRef = useRef<MonacoEditorRef>(null);
   const bottomRightEditorRef = useRef<MonacoEditorRef>(null);

@@ -72,4 +72,25 @@ test.describe('Fonctionnement hors ligne', () => {
 
     expect(social).toEqual([]);
   });
+
+  test('une URL inconnue hors ligne affiche la page de fallback', async ({ page, context }) => {
+    test.setTimeout(120_000);
+
+    // Première visite : installation du service worker et remplissage du précache.
+    await page.goto('./');
+    await expect(page.locator('.monaco-editor').first()).toBeVisible({ timeout: 30_000 });
+    await page.evaluate(() => navigator.serviceWorker.ready);
+    await page.waitForTimeout(1000);
+
+    // Coupure du réseau puis navigation vers une route non précachée.
+    await context.setOffline(true);
+    // URL inconnue sous la portée du SW : elle ne fait partie ni du précache ni du denylist.
+    await page.goto('./route-inconnue-offline');
+
+    // Le navigateFallback doit servir offline.html, pas une erreur brute.
+    await expect(page).toHaveTitle('EditorX — Hors ligne');
+    await expect(page.getByRole('link', { name: "Retour à l'éditeur" })).toBeVisible();
+
+    await context.setOffline(false);
+  });
 });
