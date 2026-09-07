@@ -10,10 +10,10 @@
 ## 1. En deux minutes
 
 **H Editor** est un éditeur de code **100 % front-end** : aucun backend, aucun compte, aucune requête
-vers un tiers. React 18 + TypeScript strict + Vite + Monaco, déployé sous `/app/`.
+vers un tiers. React 18 + TypeScript strict + Vite + Monaco, déployé sous `/heditor/`.
 
 ```bash
-npm run dev              # http://localhost:8080/app/
+npm run dev              # http://localhost:8080/heditor/
 npm run test:all         # lint + types + 144 tests unitaires + 121 E2E
 npm run test:e2e:chromium  # itération rapide sur un seul moteur
 ```

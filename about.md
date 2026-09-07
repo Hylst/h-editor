@@ -105,7 +105,7 @@ H Editor est positionné comme un **éditeur de texte/code rapide pour le naviga
 
 H Editor est né d'un prototype bootstrapé sur la plateforme **Lovable**, puis émancipé et autonomisé en projet open-source maintenu par son auteur. Toutes les références à la plateforme initiale ont été retirées (cf. [changelog v1.0.1](./changelog.md)).
 
-Le projet est désormais hébergé chez son auteur sous l'URL [hylst.fr/app](https://hylst.fr/app/).
+Le projet est désormais hébergé chez son auteur sous l'URL [hylst.fr/heditor](https://hylst.fr/heditor/).
 
 ---
 

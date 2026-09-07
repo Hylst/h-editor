@@ -122,10 +122,16 @@ test.describe('Fonctionnalités', () => {
 
   test('le filtre de l’explorateur masque les fichiers non concernés', async ({ page }) => {
     await page.keyboard.press('Control+n');
+    // Ctrl+N crée le fichier de façon asynchrone : attendre qu'il existe dans
+    // l'arbre avant de filtrer, sinon il peut apparaître pendant l'assertion
+    // toHaveCount(0) et la faire échouer (machine chargée).
+    const fichierCree = page.getByRole('treeitem').filter({ hasText: 'nouveau-fichier-1.txt' });
+    await expect(fichierCree.first()).toBeVisible();
+
     await page.getByRole('textbox', { name: 'Filtrer les fichiers' }).fill('bienv');
 
     await expect(page.getByRole('treeitem').filter({ hasText: 'bienvenue.md' })).toBeVisible();
-    await expect(page.getByRole('treeitem').filter({ hasText: 'nouveau-fichier' })).toHaveCount(0);
+    await expect(fichierCree).toHaveCount(0);
   });
 
   test('le formatage Prettier s’applique au document', async ({ page }) => {

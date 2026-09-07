@@ -1,6 +1,6 @@
 # Test, Build et Déploiement d'H Editor
 
-Guide complet pour **débutants** : tester l'app en local sur Windows, produire un build de production, puis la déployer sur un VPS Hostinger géré par **Coolify**, derrière **Nginx**, à l'URL `https://hylst.fr/app/`.
+Guide complet pour **débutants** : tester l'app en local sur Windows, produire un build de production, puis la déployer sur un VPS Hostinger géré par **Coolify**, derrière **Nginx**, à l'URL `https://hylst.fr/heditor/`.
 
 ---
 
@@ -62,13 +62,13 @@ Le terminal affiche :
 ```
   VITE v5.4.19  ready in 432 ms
 
-  ➜  Local:   http://localhost:8080/app/
-  ➜  Network: http://192.168.x.x:8080/app/
+  ➜  Local:   http://localhost:8080/heditor/
+  ➜  Network: http://192.168.x.x:8080/heditor/
 ```
 
-Ouvrir **<http://localhost:8080/app/>** dans votre navigateur (Chrome ou Edge recommandés pour la File System Access API).
+Ouvrir **<http://localhost:8080/heditor/>** dans votre navigateur (Chrome ou Edge recommandés pour la File System Access API).
 
-> ⚠️ Le `/app/` final est **important** : l'app est configurée pour être servie sous ce sous-chemin (`base: '/app/'` dans `vite.config.ts`). Sans le `/app/`, vous obtiendrez une page blanche ou un 404.
+> ⚠️ Le `/heditor/` final est **important** : l'app est configurée pour être servie sous ce sous-chemin (`base: '/heditor/'` dans `vite.config.ts`). Sans le `/heditor/`, vous obtiendrez une page blanche ou un 404.
 
 ### A.5 Tester les fonctionnalités
 
@@ -127,7 +127,7 @@ dist/
     └── ...
 ```
 
-Ouvrir `dist/index.html` dans un éditeur et vérifier que les chemins commencent par `/app/assets/...` (preuve que `base: '/app/'` est bien appliqué).
+Ouvrir `dist/index.html` dans un éditeur et vérifier que les chemins commencent par `/heditor/assets/...` (preuve que `base: '/heditor/'` est bien appliqué).
 
 ### B.3 Tester le build en local
 
@@ -137,10 +137,10 @@ npm run preview
 
 Sortie :
 ```
-  ➜  Local:   http://localhost:4173/app/
+  ➜  Local:   http://localhost:4173/heditor/
 ```
 
-Ouvrir **<http://localhost:4173/app/>**. Vous testez **exactement** le bundle qui sera déployé. Si ça marche ici, ça marchera sur le serveur (à la config Nginx près).
+Ouvrir **<http://localhost:4173/heditor/>**. Vous testez **exactement** le bundle qui sera déployé. Si ça marche ici, ça marchera sur le serveur (à la config Nginx près).
 
 ---
 
@@ -157,7 +157,7 @@ Ouvrir **<http://localhost:4173/app/>**. Vous testez **exactement** le bundle qu
 
 H Editor est un **site 100 % statique** — pas de Node, pas de Docker à exécuter. Deux options :
 
-**Option 1 (recommandée pour `hylst.fr/app`)** : déposer les fichiers statiques dans un dossier servi par le Nginx du site principal, sous le `location /app/`.
+**Option 1 (recommandée pour `hylst.fr/heditor`)** : déposer les fichiers statiques dans un dossier servi par le Nginx du site principal, sous le `location /heditor/`.
 
 **Option 2 (plus simple, URL différente)** : créer un service "Static Site" séparé dans Coolify, exposé sur le sous-domaine `app.hylst.fr`. Aucune modif Nginx du site principal.
 
@@ -183,22 +183,22 @@ Plusieurs méthodes possibles. Trois choix selon votre préférence :
 
 #### Méthode 1 — Coolify File Manager (le plus simple)
 1. Coolify UI → votre site `hylst.fr` → onglet "Files" / "Storage"
-2. Naviguer ou créer le dossier `/var/www/hylst/app/` (le chemin exact dépend de votre setup Coolify)
+2. Naviguer ou créer le dossier `/var/www/hylst/heditor/` (le chemin exact dépend de votre setup Coolify)
 3. Upload du contenu de `dist/`
 
 #### Méthode 2 — SFTP (FileZilla, WinSCP)
 1. Hostinger fournit les identifiants SSH dans son dashboard
 2. Se connecter en SFTP au VPS
-3. Uploader le contenu de `dist/` vers `/var/www/hylst/app/`
+3. Uploader le contenu de `dist/` vers `/var/www/hylst/heditor/`
 
 #### Méthode 3 — SCP en ligne de commande
 ```powershell
-scp -r dist/* user@VOTRE_IP_VPS:/var/www/hylst/app/
+scp -r dist/* user@VOTRE_IP_VPS:/var/www/hylst/heditor/
 ```
 
-> Le chemin `/var/www/hylst/app/` est un exemple. Adaptez selon où Coolify sert votre site `hylst.fr`. Vous pouvez le trouver via l'UI Coolify ou en SSH avec `nginx -T | grep root`.
+> Le chemin `/var/www/hylst/heditor/` est un exemple. Adaptez selon où Coolify sert votre site `hylst.fr`. Vous pouvez le trouver via l'UI Coolify ou en SSH avec `nginx -T | grep root`.
 
-### C.5 Configurer Nginx pour servir `/app`
+### C.5 Configurer Nginx pour servir `/heditor`
 
 Éditer la configuration Nginx du site `hylst.fr`. Selon votre setup Coolify, cela peut se faire :
 
@@ -216,15 +216,15 @@ server {
     root /var/www/hylst/public;   # exemple — à adapter
     index index.html;
 
-    # ─── H Editor servi sous /app/ ───────────────────────────
-    location /app/ {
-        alias /var/www/hylst/app/;
+    # ─── H Editor servi sous /heditor/ ───────────────────────────
+    location /heditor/ {
+        alias /var/www/hylst/heditor/;
         index index.html;
         # SPA fallback : toute route inconnue retourne index.html
-        try_files $uri $uri/ /app/index.html;
+        try_files $uri $uri/ /heditor/index.html;
 
         # Cache long pour les assets hashés (immuables)
-        location ~* /app/assets/.*\.(js|css|woff2?|svg|png|jpg|jpeg|gif|ico)$ {
+        location ~* /heditor/assets/.*\.(js|css|woff2?|svg|png|jpg|jpeg|gif|ico)$ {
             expires 1y;
             add_header Cache-Control "public, immutable";
         }
@@ -233,7 +233,7 @@ server {
 }
 ```
 
-> **Pourquoi `try_files ... /app/index.html` ?** Parce qu'H Editor est une SPA React. Si quelqu'un recharge la page sur `https://hylst.fr/app/settings` (par exemple), Nginx ne doit pas chercher un fichier `settings` qui n'existe pas — il doit renvoyer `index.html` et laisser React Router gérer.
+> **Pourquoi `try_files ... /heditor/index.html` ?** Parce qu'H Editor est une SPA React. Si quelqu'un recharge la page sur `https://hylst.fr/heditor/settings` (par exemple), Nginx ne doit pas chercher un fichier `settings` qui n'existe pas — il doit renvoyer `index.html` et laisser React Router gérer.
 
 ### C.6 Tester et recharger Nginx
 
@@ -247,7 +247,7 @@ Si vous passez par Coolify UI, cliquer simplement sur "Redeploy" ou "Apply" du s
 
 ### C.7 Tester en production
 
-Ouvrir **<https://hylst.fr/app/>** dans un navigateur.
+Ouvrir **<https://hylst.fr/heditor/>** dans un navigateur.
 
 Tests à effectuer :
 - [ ] La page se charge, l'éditeur s'affiche
@@ -261,7 +261,7 @@ Tests à effectuer :
 À chaque évolution du code :
 
 1. Sur votre machine Windows : `git pull` puis `npm install` (si dépendances changées) puis `npm run build`
-2. Upload du contenu de `dist/` dans `/var/www/hylst/app/` (écrase les anciens)
+2. Upload du contenu de `dist/` dans `/var/www/hylst/heditor/` (écrase les anciens)
 3. Pas besoin de recharger Nginx (sauf changement de config)
 4. Les utilisateurs récupèrent automatiquement la nouvelle version au prochain chargement (les noms d'assets sont hashés, donc pas de cache à invalider manuellement)
 
@@ -280,8 +280,8 @@ Si la config Nginx vous intimide, voici des options qui marchent en 2 minutes :
 5. Domaine : `app.hylst.fr`
 
 ⚠️ Si vous adoptez cette option, il faut **annuler** la config sous-chemin :
-- Dans `vite.config.ts` : `base: '/'` (au lieu de `/app/`)
-- Dans `src/App.tsx` : retirer `basename="/app"`
+- Dans `vite.config.ts` : `base: '/'` (au lieu de `/heditor/`)
+- Dans `src/App.tsx` : retirer `basename="/heditor"`
 
 ### D.2 Hébergement statique gratuit
 
@@ -300,15 +300,15 @@ Idéal pour tester rapidement avant de déployer sur votre VPS.
 
 | Symptôme | Cause probable | Solution |
 |---|---|---|
-| Page blanche, console : `Failed to load resource /assets/...` | Oubli du `base: '/app/'` dans `vite.config.ts` | Rebuild après ajout de la ligne |
-| F5 sur une route retourne 404 | Bloc `try_files` manquant dans Nginx | Ajouter `try_files $uri $uri/ /app/index.html;` |
-| Routes React cassées (URL change mais l'app ne réagit pas) | Oubli du `basename="/app"` dans `<BrowserRouter>` | Rebuild après correction |
+| Page blanche, console : `Failed to load resource /assets/...` | Oubli du `base: '/heditor/'` dans `vite.config.ts` | Rebuild après ajout de la ligne |
+| F5 sur une route retourne 404 | Bloc `try_files` manquant dans Nginx | Ajouter `try_files $uri $uri/ /heditor/index.html;` |
+| Routes React cassées (URL change mais l'app ne réagit pas) | Oubli du `basename="/heditor"` dans `<BrowserRouter>` | Rebuild après correction |
 | HTTPS ne marche pas | Let's Encrypt pas (re)configuré | Coolify → "Generate SSL Certificate" |
 | `npm install` échoue (Windows : "node-gyp" / "Python") | Outils de build natifs manquants — pas grave pour H Editor (pas de natif) | Réessayer, ou `npm install --no-optional` |
 | Port 8080 déjà occupé | Autre app utilise le port | Modifier `port` dans `vite.config.ts` ou tuer le process : `Get-NetTCPConnection -LocalPort 8080` |
-| `npm run dev` ouvre `http://localhost:8080/` (sans /app/) | Vous avez retiré le `base` | Soit ajouter `/app/` à l'URL, soit retirer `base` dans `vite.config.ts` |
+| `npm run dev` ouvre `http://localhost:8080/` (sans /heditor/) | Vous avez retiré le `base` | Soit ajouter `/heditor/` à l'URL, soit retirer `base` dans `vite.config.ts` |
 | Cache navigateur tenace | Anciens fichiers cachés | `Ctrl+F5` (hard reload) ou DevTools → "Disable cache" |
-| Coolify ne voit pas les changements | Volume monté en lecture seule | Vérifier les permissions du dossier `/var/www/hylst/app/` |
+| Coolify ne voit pas les changements | Volume monté en lecture seule | Vérifier les permissions du dossier `/var/www/hylst/heditor/` |
 
 ### E.1 Logs utiles
 
@@ -335,12 +335,12 @@ Si quelque chose tourne mal :
 ## ✅ Checklist déploiement final
 
 - [ ] `npm run build` réussi, dossier `dist/` généré
-- [ ] `npm run preview` testé et fonctionnel sur `http://localhost:4173/app/`
-- [ ] Contenu de `dist/` uploadé dans `/var/www/hylst/app/`
-- [ ] Bloc `location /app/` ajouté à la config Nginx de `hylst.fr`
+- [ ] `npm run preview` testé et fonctionnel sur `http://localhost:4173/heditor/`
+- [ ] Contenu de `dist/` uploadé dans `/var/www/hylst/heditor/`
+- [ ] Bloc `location /heditor/` ajouté à la config Nginx de `hylst.fr`
 - [ ] `sudo nginx -t` retourne OK
 - [ ] `sudo systemctl reload nginx` exécuté
-- [ ] `https://hylst.fr/app/` charge correctement
+- [ ] `https://hylst.fr/heditor/` charge correctement
 - [ ] F5 sur une route ne retourne pas 404
 - [ ] Image `og-image.png` présente dans `public/` (sinon `/og-image.png` retourne 404 — pas bloquant pour le fonctionnement, juste pour le partage social)
 

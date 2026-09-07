@@ -18,7 +18,7 @@ import { chromium } from '@playwright/test';
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const OUT = join(root, 'captures');
 const PORT = 4173;
-const BASE = `http://localhost:${PORT}/app/`;
+const BASE = `http://localhost:${PORT}/heditor/`;
 
 // ── Projet de démonstration ──────────────────────────────────────────────────
 // Un site « champ d'étoiles » (hommage demoscene) + sa version React/TS,

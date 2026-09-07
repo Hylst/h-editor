@@ -11,7 +11,7 @@ Un éditeur de code en ligne moderne, rapide et 100 % front-end, construit avec 
 
 H Editor est un IDE léger qui tient dans votre navigateur : pas de backend, pas de tracking, **aucune requête vers un tiers** (Monaco et les polices sont embarqués). Vos fichiers restent sur votre machine — métadonnées en `localStorage`, contenu en `IndexedDB`, écriture disque via la File System Access API. Pensé pour le développeur qui veut éditer, prototyper, prévisualiser sans installer un IDE complet.
 
-> Démo prévue : `https://hylst.fr/app/`
+> Démo prévue : `https://hylst.fr/heditor/`
 
 ---
 
@@ -35,9 +35,9 @@ npm install
 npm run dev
 ```
 
-L'application est accessible sur **http://localhost:8080/app/**
+L'application est accessible sur **http://localhost:8080/heditor/**
 
-> ⚠️ L'app est configurée avec `base: '/app/'` (déploiement sous-chemin). Le `/app/` final est donc important même en local.
+> ⚠️ L'app est configurée avec `base: '/heditor/'` (déploiement sous-chemin). Le `/heditor/` final est donc important même en local.
 
 ---
 
@@ -97,10 +97,10 @@ Liste complète : voir [features.md](./features.md).
 ## 🛠️ Scripts npm
 
 ```bash
-npm run dev        # Dev server (http://localhost:8080/app/)
+npm run dev        # Dev server (http://localhost:8080/heditor/)
 npm run build      # Build production → ./dist/
 npm run build:dev  # Build en mode développement (avec sourcemaps)
-npm run preview    # Serveur local sur ./dist/ (http://localhost:4173/app/)
+npm run preview    # Serveur local sur ./dist/ (http://localhost:4173/heditor/)
 npm run lint       # ESLint
 npm run typecheck  # Vérification TypeScript (strict)
 npm run test       # Tests unitaires Vitest (mode watch)
@@ -187,7 +187,7 @@ Détails dans [structure.md](./structure.md).
 
 H Editor se déploie comme un **site statique** (rien à exécuter côté serveur).
 
-Le guide complet — depuis le test local Windows jusqu'au déploiement sur VPS Hostinger avec Coolify + Nginx sous l'URL `https://hylst.fr/app/` — est dans [test_build_deploy.md](./test_build_deploy.md).
+Le guide complet — depuis le test local Windows jusqu'au déploiement sur VPS Hostinger avec Coolify + Nginx sous l'URL `https://hylst.fr/heditor/` — est dans [test_build_deploy.md](./test_build_deploy.md).
 
 Alternatives rapides : Netlify, Vercel, Cloudflare Pages, GitHub Pages (drag & drop du dossier `dist/`).
 

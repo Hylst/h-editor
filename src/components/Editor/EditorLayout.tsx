@@ -994,10 +994,6 @@ const EditorLayout = () => {
             </Tooltip>
 
             <AppTitle />
-            <span className="hidden h-4 w-px bg-editor-border sm:block" />
-            <span className="hidden truncate text-xs text-editor-text-muted md:block sm:text-sm">
-              Né sur smartphone, élevé à la demoscene
-            </span>
           </div>
 
           <nav className="flex items-center gap-1 sm:gap-2" aria-label="Actions principales">

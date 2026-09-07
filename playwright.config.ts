@@ -10,7 +10,7 @@ import { defineConfig, devices } from '@playwright/test';
  *             `npm run test:e2e:ui` pour le mode interactif.
  */
 const PORT = 4173;
-const BASE_URL = `http://localhost:${PORT}/app/`;
+const BASE_URL = `http://localhost:${PORT}/heditor/`;
 
 export default defineConfig({
   testDir: './e2e',

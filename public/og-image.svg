@@ -46,7 +46,7 @@
       <text x="48" y="194" fill="#e2e8f0"><tspan fill="#c084fc">const </tspan><tspan fill="#60a5fa">app </tspan>= () =&gt; (</text>
       <text x="64" y="218" fill="#e2e8f0">&lt;<tspan fill="#f87171">Editor</tspan> <tspan fill="#fbbf24">theme</tspan>=<tspan fill="#86efac">"zen"</tspan> <tspan fill="#fbbf24">local</tspan> /&gt;</text>
       <text x="48" y="242" fill="#e2e8f0">);</text>
-      <text x="48" y="290" fill="#94a3b8">// hylst.fr/app</text>
+      <text x="48" y="290" fill="#94a3b8">// hylst.fr/heditor</text>
     </g>
   </g>
 
@@ -84,7 +84,7 @@
 
   <!-- Footer -->
   <g font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif">
-    <text x="80" y="552" font-size="22" font-weight="700" fill="#60a5fa">hylst.fr/app</text>
+    <text x="80" y="552" font-size="22" font-weight="700" fill="#60a5fa">hylst.fr/heditor</text>
     <text x="80" y="582" font-size="15" font-weight="400" fill="#64748b">par Geoffroy Streit  ·  open source  ·  MIT</text>
   </g>
 

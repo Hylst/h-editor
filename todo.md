@@ -33,7 +33,7 @@ Détail complet dans [plan.md](./plan.md) et [changelog.md](./changelog.md).
 
 ## 🚧 En cours
 
-- [ ] **Premier déploiement** : suivre [test_build_deploy.md](./test_build_deploy.md) → publier sur `https://hylst.fr/app/`
+- [ ] **Premier déploiement** : suivre [test_build_deploy.md](./test_build_deploy.md) → publier sur `https://hylst.fr/heditor/`
 
 ## ✅ Terminé en v1.0.2
 

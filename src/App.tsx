@@ -15,7 +15,7 @@ const NotFound = lazy(() => import('./pages/NotFound'));
 const App = () => (
   <ErrorBoundary>
     <TooltipProvider delayDuration={400}>
-      <BrowserRouter basename="/app">
+      <BrowserRouter basename="/heditor">
         <Suspense fallback={null}>
           <Routes>
             <Route path="/" element={<Index />} />

@@ -56,6 +56,20 @@ comme « Fichier JSON invalide ». Il est désormais **ajouté au projet comme f
 onglet ouvert, avec une notification qui explique le cas ; seuls les JSON illisibles produisent
 une erreur. Test de non-régression : `analyzeJSONImport`.
 
+### 📂 Déploiement sous `/heditor/` (Changed)
+
+Le sous-chemin de déploiement passe de `/app/` à **`/heditor/`** (H pour Hylst) :
+
+- `vite.config.ts` : `base: '/heditor/'`, manifeste (`start_url`, `scope`, `id`), raccourcis
+  d'application et `navigateFallback` alignés ;
+- `src/App.tsx` : `<BrowserRouter basename="/heditor">` ;
+- `public/offline.html`, SEO (`canonical`, Open Graph, JSON-LD), `robots.txt`, `sitemap.xml`,
+  `package.json` et `appInfo.ts` (homepage) mis à jour ;
+- le sous-titre « Né sur smartphone, élevé à la demoscene » de l'en-tête est supprimé.
+
+Le build statique se place désormais dans `/heditor/` du serveur Nginx (Coolify ou autre) :
+`https://hylst.fr/heditor/`.
+
 ---
 
 ## [1.7.0] - 2026-08-24

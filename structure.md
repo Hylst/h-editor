@@ -25,7 +25,7 @@ editorx-zen-code-main/
 │   └── lib/                # Bibliothèques internes (cn)
 ├── e2e/                    # Playwright (7 specs + helpers.ts)
 ├── index.html              # Point d'entrée HTML + meta SEO
-├── vite.config.ts          # Configuration Vite (base: '/app/') + PWA
+├── vite.config.ts          # Configuration Vite (base: '/heditor/') + PWA
 ├── playwright.config.ts    # 4 profils (chromium, mobile-chrome, firefox, webkit)
 ├── tsconfig*.json          # Configuration TypeScript (3 fichiers)
 ├── tailwind.config.ts      # Configuration Tailwind + design tokens
@@ -362,11 +362,11 @@ Autres points :
 
 ## 🚢 Configuration de déploiement (sous-chemin `/app`)
 
-H Editor est servi sous `https://hylst.fr/app/`. Deux ajustements qui doivent rester synchronisés :
+H Editor est servi sous `https://hylst.fr/heditor/`. Deux ajustements qui doivent rester synchronisés :
 
 ### `vite.config.ts`
 ```ts
-base: '/app/',
+base: '/heditor/',
 ```
 
 ### `src/App.tsx`

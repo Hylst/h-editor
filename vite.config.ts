@@ -22,7 +22,7 @@ const versionInjector = {
 };
 
 export default defineConfig(() => ({
-  base: "/app/",
+  base: "/heditor/",
   server: {
     host: "::",
     port: 8080,
@@ -49,11 +49,11 @@ export default defineConfig(() => ({
         background_color: THEME_COLOR,
         display: "standalone",
         display_override: ["window-controls-overlay", "standalone", "browser"],
-        start_url: "/app/",
-        scope: "/app/",
+        start_url: "/heditor/",
+        scope: "/heditor/",
         lang: "fr",
         orientation: "any",
-        id: "/app/",
+        id: "/heditor/",
         icons: [
           { src: "favicon.ico", sizes: "32x32", type: "image/x-icon" },
           { src: "icon.svg", sizes: "any", type: "image/svg+xml", purpose: "any" },
@@ -66,21 +66,21 @@ export default defineConfig(() => ({
             name: "Nouveau fichier",
             short_name: "Nouveau",
             description: "Créer un nouveau fichier dans l'éditeur",
-            url: "/app/?action=new-file",
+            url: "/heditor/?action=new-file",
             icons: [{ src: "icon-192.png", sizes: "192x192" }],
           },
           {
             name: "Importer un fichier",
             short_name: "Importer",
             description: "Importer un fichier depuis le disque",
-            url: "/app/?action=import",
+            url: "/heditor/?action=import",
             icons: [{ src: "icon-192.png", sizes: "192x192" }],
           },
           {
             name: "Mode Zen",
             short_name: "Zen",
             description: "Ouvrir en mode plein écran sans distractions",
-            url: "/app/?mode=zen",
+            url: "/heditor/?mode=zen",
             icons: [{ src: "icon-192.png", sizes: "192x192" }],
           },
         ],
@@ -144,8 +144,8 @@ export default defineConfig(() => ({
         // Fallback offline si la navigation n'est pas dans le cache.
         // Nginx gère le routage SPA en ligne ; le SW fournit la page
         // offline.html uniquement quand le réseau est absent.
-        // Chemin absolu préfixé par la base `/app/` (déploiement sous /app/).
-        navigateFallback: "/app/offline.html",
+        // Chemin absolu préfixé par la base `/heditor/` (déploiement sous /heditor/).
+        navigateFallback: "/heditor/offline.html",
         navigateFallbackDenylist: [/^\/api\//, /\.\w+$/],
       },
       devOptions: {

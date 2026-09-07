@@ -5,7 +5,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Commands
 
 ```bash
-npm run dev        # Dev server at http://localhost:8080/app/
+npm run dev        # Dev server at http://localhost:8080/heditor/
 npm run build      # Production build → ./dist/
 npm run preview    # Preview production build locally
 npm run lint       # ESLint
@@ -131,10 +131,10 @@ The preview console is interactive: the parent posts an expression on the `edito
 channel and the iframe evaluates it. `eval` is acceptable there — opaque origin, no access to editor
 storage — but the receiver must keep its `event.source !== parent` guard.
 
-### Sub-path deployment (`/app/`)
+### Sub-path deployment (`/heditor/`)
 
 Configured in two places that must stay in sync:
-- `vite.config.ts`: `base: '/app/'`
+- `vite.config.ts`: `base: '/heditor/'`
 - `src/App.tsx`: `<BrowserRouter basename="/app">`
 
 ### Build / code splitting

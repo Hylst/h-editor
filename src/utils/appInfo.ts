@@ -13,4 +13,4 @@ export const APP_VERSION =
 
 export const APP_NAME = 'H Editor';
 export const APP_AUTHOR = 'Geoffroy Streit';
-export const APP_HOMEPAGE = 'https://hylst.fr/app';
+export const APP_HOMEPAGE = 'https://hylst.fr/heditor';

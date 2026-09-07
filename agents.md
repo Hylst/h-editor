@@ -6,7 +6,7 @@ Lire aussi `continue.md` pour le contexte détaillé et les pièges connus.
 ## Commandes
 
 ```bash
-npm run dev                # Serveur de développement — http://localhost:8080/app/
+npm run dev                # Serveur de développement — http://localhost:8080/heditor/
 npm run build              # Build de production → ./dist/
 npm run lint               # ESLint (doit rester à 0 erreur)
 npm run typecheck          # tsc --noEmit, mode strict
@@ -22,7 +22,7 @@ Un test rouge n'est jamais « à corriger plus tard ».
 ## Nature du projet
 
 Éditeur de code **100 % front-end**. Pas de backend, pas de compte, **aucune requête vers un tiers**.
-React 18 · TypeScript `strict` · Vite · Monaco · Tailwind · shadcn/ui. Déployé sous `/app/`.
+React 18 · TypeScript `strict` · Vite · Monaco · Tailwind · shadcn/ui. Déployé sous `/heditor/`.
 
 ## Règles impératives
 

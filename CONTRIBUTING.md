@@ -12,7 +12,7 @@ contribution soit intégrée rapidement.
 
 ```bash
 npm install
-npm run dev        # http://localhost:8080/app/ — le /app/ final est obligatoire
+npm run dev        # http://localhost:8080/heditor/ — le /heditor/ final est obligatoire
 ```
 
 ---

@@ -7,7 +7,7 @@
 
 ## 🚀 Version longue (LinkedIn / blog)
 
-**Après des mois de développement, je suis fier d'annoncer qu'H Editor est terminé et en ligne : https://hylst.fr/app/**
+**Après des mois de développement, je suis fier d'annoncer qu'H Editor est terminé et en ligne : https://hylst.fr/heditor/**
 
 H Editor, c'est quoi ? Un **éditeur de code complet, directement dans votre navigateur** — sans installation, sans compte, sans serveur. Vous ouvrez l'URL, vous codez. C'est tout.
 
@@ -35,7 +35,7 @@ Pas de backend, pas de compte, pas de télémétrie, **aucune requête vers un t
 - chaque bug ayant réellement existé dispose de son test de non-régression ;
 - des performances chiffrées : recherche dans 1 500 fichiers en 43 ms, frappe fluide à 2 000 fichiers ouverts, application de ~180 Ko au démarrage.
 
-👉 **Essayez-le** : https://hylst.fr/app/
+👉 **Essayez-le** : https://hylst.fr/heditor/
 💻 **Code source (MIT)** : https://github.com/hylst/editorx
 
 Vos retours sont les bienvenus — bugs, idées, contributions. Et si le projet vous plaît, une ⭐ sur le dépôt fait toujours plaisir !
@@ -50,7 +50,7 @@ Vos retours sont les bienvenus — bugs, idées, contributions. Et si le projet 
 
 Un éditeur de code complet **dans votre navigateur** : moteur de VS Code, aperçu de site multi-fichiers avec console interactive, sauvegarde locale auto, hors ligne & installable (PWA). Sans compte, sans serveur, sans requête vers un tiers.
 
-👉 https://hylst.fr/app/
+👉 https://hylst.fr/heditor/
 💻 MIT : https://github.com/hylst/editorx
 
 ---
