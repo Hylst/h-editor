@@ -50,6 +50,12 @@ L'idée : vous ouvrez l'URL, vous codez, vos fichiers restent chez vous (localSt
 - Dialogue d'aide intégré
 - Paramètres personnalisables (fontSize, tabSize, wordWrap, minimap, thème, autoSave)
 
+### 📲 Installable et hors ligne (PWA)
+- Bouton **« Installer »** dans la barre d'état (desktop et mobile) — l'app s'ouvre ensuite dans sa propre fenêtre
+- **Fonctionnement hors ligne** : Monaco et la police sont précachés, avec page de fallback dédiée
+- **Raccourcis d'application** : « Nouveau fichier », « Importer », « Mode Zen » depuis l'icône
+- **Adaptée au mobile** : explorateur replié par défaut sur écran étroit, balises d'installation iOS
+
 ---
 
 ## Technologies utilisées
@@ -127,7 +133,9 @@ Sous licence **MIT** — voir [LICENSE](./LICENSE). Vous êtes libre de l'utilis
 
 **Rien ne sort de votre navigateur.** L'éditeur Monaco et la police sont embarqués dans
 l'application : aucune requête vers un CDN, aucun compte, aucune télémétrie. L'application
-fonctionne **hors ligne**, ce qui est vérifié par un test coupant réellement le réseau.
+fonctionne **hors ligne**, ce qui est vérifié par un test coupant réellement le réseau. Elle
+s'**installe comme une application** (PWA — bouton « Installer » dans la barre d'état) et s'adapte
+au **mobile** : explorateur replié par défaut sur écran étroit.
 
 **Vos fichiers sont traités avec soin.** Le contenu est compressé avant écriture, les sauvegardes
 sont incrémentales, un journal protège des plantages, et toute écriture concurrente — un autre

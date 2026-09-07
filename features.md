@@ -186,6 +186,20 @@ Persistés dans `localStorage` (`editorx-settings`) ; toute lecture passe par
 
 ---
 
+## 📲 PWA, hors ligne et mobile
+
+| Fonctionnalité | Statut | Détail |
+|---|---|---|
+| Application installable (PWA) | ✅ | Manifeste complet, `display: standalone`, icônes 192/512 px + SVG |
+| Bouton « Installer » | ✅ | Dans la barre d'état, dès que le navigateur émet `beforeinstallprompt` (`useInstallPrompt`) |
+| Fonctionnement hors ligne | ✅ | Monaco et la police embarqués, précachés (37 entrées, ~5,5 Mo) — vérifié par un test E2E coupant réellement le réseau |
+| Page de fallback hors ligne | ✅ | `public/offline.html` servie par le service worker (`navigateFallback`) pour les navigations sans réseau ; n'intercepte ni `/api/` ni les assets |
+| Raccourcis d'application | ✅ | « Nouveau fichier », « Importer un fichier », « Mode Zen » depuis l'icône PWA |
+| Explorateur replié sur mobile | ✅ | Écran < 768 px : la place va à l'éditeur ; explorateur réouvrable (`Ctrl+B` ou bouton) |
+| Installabilité iOS | ✅ | Balises `apple-mobile-web-app-*`, icône 512 px, screenshot portrait (`narrow`) |
+
+---
+
 ## 🔮 Roadmap
 
 La liste complète et priorisée vit dans [todo.md](./todo.md) — source unique, pour éviter deux
@@ -200,7 +214,7 @@ contraste custom, mise en page mobile dédiée, raccourcis personnalisables.
 ## 📊 Récapitulatif
 
 Le décompte détaillé par catégorie évolue à chaque version ; se référer aux tableaux ci-dessus
-(statuts à jour au 25/08/2026).
+(statuts à jour au 07/09/2026).
 
 
 ---
