@@ -46,7 +46,7 @@ import {
 } from '@/utils/fileSystem';
 import { importDirectory, isDirectoryPickerSupported } from '@/utils/directoryImport';
 import { canFormat, formatCode } from '@/utils/formatter';
-import { downloadJSON, importFromJSON } from '@/utils/fileStorage';
+import { analyzeJSONImport, downloadJSON } from '@/utils/fileStorage';
 import { downloadAsZip, importFromZip } from '@/utils/zipHandler';
 import { canPreview } from '@/utils/markdown';
 import { FILE_TEMPLATES } from '@/utils/templates';
@@ -471,16 +471,30 @@ const EditorLayout = () => {
   // ── Import / export ───────────────────────────────────────────────────────
 
   const handleImportJSON = useCallback(
-    (json: string) => {
-      const imported = importFromJSON(json);
-      if (!imported) {
-        toast.error('Fichier JSON invalide');
+    (json: string, fileName?: string) => {
+      const result = analyzeJSONImport(json);
+
+      if (result.kind === 'invalid') {
+        toast.error('JSON illisible : le fichier n’a pas pu être analysé.');
         return;
       }
 
-      workspace.replaceWorkspace(imported.files, imported.folders);
+      if (result.kind === 'file') {
+        // Un JSON valide qui n'est pas une sauvegarde de projet reste utile :
+        // on l'ajoute comme fichier ordinaire plutôt que de le rejeter.
+        const name = fileName?.trim() ? fileName.trim() : 'donnees.json';
+        const id = workspace.createFile(undefined, name, json);
+        tabsApi.openTab(id);
+        toast.success(`« ${name} » ajouté au projet`, {
+          description:
+            'Ce JSON n’était pas une sauvegarde de projet — il a été ajouté comme fichier ordinaire.',
+        });
+        return;
+      }
+
+      workspace.replaceWorkspace(result.structure.files, result.structure.folders);
       tabsApi.closeAllTabs();
-      toast.success(`Projet importé (${imported.files.length} fichiers)`, {
+      toast.success(`Projet importé (${result.structure.files.length} fichiers)`, {
         action: {
           label: 'Annuler',
           onClick: () => {

@@ -46,7 +46,7 @@ interface SidebarProps {
   onNewFromTemplate: (templateId: string) => void;
   onNewFolder: (parentId?: string) => void;
   onToggleFolder: (folderId: string) => void;
-  onImportJSON: (json: string) => void;
+  onImportJSON: (json: string, fileName?: string) => void;
   onExportJSON: () => void;
   onImportZip: (file: File) => void;
   onExportZip: () => void;
@@ -650,7 +650,7 @@ const Sidebar = ({
         tabIndex={-1}
         onChange={(e) => {
           const file = e.target.files?.[0];
-          if (file) file.text().then(onImportJSON);
+          if (file) file.text().then((text) => onImportJSON(text, file.name));
           e.target.value = '';
         }}
       />

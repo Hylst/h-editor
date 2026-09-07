@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import type { EditorFile, EditorFolder } from '@/types/editor';
-import { exportToJSON, importFromJSON } from './fileStorage';
+import { analyzeJSONImport, exportToJSON, importFromJSON } from './fileStorage';
 import { getLanguageFromFilename } from './fileSystem';
 import { canFormat, formatCode } from './formatter';
 
@@ -39,6 +39,26 @@ describe('export / import JSON', () => {
     const file = importFromJSON(json)!.files[0];
     expect(file.content).toBe('');
     expect(file.language).toBe('python');
+  });
+});
+
+describe('analyzeJSONImport', () => {
+  it('reconnaît une sauvegarde de projet', () => {
+    const result = analyzeJSONImport(exportToJSON(files, folders));
+    expect(result.kind).toBe('project');
+    if (result.kind === 'project') expect(result.structure.files).toHaveLength(2);
+  });
+
+  it('traite un JSON valide non projet comme un fichier à ajouter', () => {
+    // Avant : tout JSON valide qui n'était pas un projet était rejeté « invalide ».
+    expect(analyzeJSONImport('{"foo":1}').kind).toBe('file');
+    expect(analyzeJSONImport('[]').kind).toBe('file');
+    expect(analyzeJSONImport('[1, 2, 3]').kind).toBe('file');
+  });
+
+  it('signale un JSON illisible', () => {
+    expect(analyzeJSONImport('pas du json').kind).toBe('invalid');
+    expect(analyzeJSONImport('{"files": [').kind).toBe('invalid');
   });
 });
 

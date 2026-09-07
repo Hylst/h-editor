@@ -71,6 +71,31 @@ export const importFromJSON = (jsonString: string): FileSystemStructure | null =
   }
 };
 
+export type JSONImportAnalysis =
+  | { kind: 'project'; structure: FileSystemStructure }
+  | { kind: 'file'; content: string }
+  | { kind: 'invalid' };
+
+/**
+ * Analyse un JSON importé, qui peut être trois choses :
+ *
+ * - une sauvegarde de projet (format « Exporter en JSON ») → importée telle quelle ;
+ * - un JSON valide quelconque (config, données…) → ajouté au projet comme fichier
+ *   ordinaire : le rejeter sous prétexte qu'il n'est pas un projet était trompeur ;
+ * - du texte illisible → signalé à l'utilisateur.
+ */
+export const analyzeJSONImport = (jsonString: string): JSONImportAnalysis => {
+  const structure = importFromJSON(jsonString);
+  if (structure) return { kind: 'project', structure };
+
+  try {
+    JSON.parse(jsonString);
+    return { kind: 'file', content: jsonString };
+  } catch {
+    return { kind: 'invalid' };
+  }
+};
+
 export const downloadJSON = (files: EditorFile[], folders: EditorFolder[]): void => {
   const blob = new Blob([exportToJSON(files, folders)], { type: 'application/json' });
   const url = URL.createObjectURL(blob);

@@ -58,8 +58,14 @@ test.describe('Fonctionnalités', () => {
     const search = page.getByRole('textbox', { name: 'Terme à rechercher' });
     await search.fill('Raccourcis');
 
-    await expect(page.getByText(/résultat/)).toBeVisible();
-    await page.getByRole('button', { name: /^L\d+/ }).first().click();
+    // Le libellé « N résultat(s) » matche aussi l'état transitoire entre le
+    // commit React (query posée, pending encore false) et l'exécution de
+    // l'effet qui lance la recherche : « 0 résultats dans 0 fichiers » et
+    // « Aucun résultat » coexistent alors, et getByText(/résultat/) viole le
+    // mode strict. On attend les lignes de résultats, seules à porter « L<n> ».
+    const premierResultat = page.getByRole('button', { name: /^L\d+/ }).first();
+    await expect(premierResultat).toBeVisible();
+    await premierResultat.click();
     await expect(page.getByRole('contentinfo')).not.toContainText('Ln 1, Col 1');
 
     // Même chose une fois l'éditeur divisé
