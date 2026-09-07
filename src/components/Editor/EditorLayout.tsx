@@ -31,6 +31,7 @@ import TabBar from './TabBar';
 import Sidebar from './Sidebar';
 import StatusBar from './StatusBar';
 import ResizeHandle from './ResizeHandle';
+import AppTitle from './AppTitle';
 import { useKeyboardShortcuts, type KeyboardShortcut } from '@/hooks/useKeyboardShortcuts';
 import { useSettings } from '@/hooks/useSettings';
 import { useWorkspace } from '@/hooks/useWorkspace';
@@ -369,7 +370,7 @@ const EditorLayout = () => {
       // Le fichier a changé sur le disque depuis son ouverture : l'écraser
       // ferait perdre le travail de l'autre outil (éditeur, git…).
       const file = targetFile;
-      toast.warning('Ce fichier a été modifié en dehors d’EditorX', {
+      toast.warning('Ce fichier a été modifié en dehors d’H Editor', {
         description: `Modifié sur le disque le ${new Date(result.diskModifiedAt).toLocaleString('fr-FR')}. Écraser remplacerait cette version.`,
         duration: Infinity,
         action: {
@@ -992,12 +993,10 @@ const EditorLayout = () => {
               <TooltipContent>Explorateur (Ctrl+B)</TooltipContent>
             </Tooltip>
 
-            <span className="flex-shrink-0 bg-gradient-to-r from-primary to-accent bg-clip-text text-lg font-bold text-transparent sm:text-xl">
-              EditorX
-            </span>
+            <AppTitle />
             <span className="hidden h-4 w-px bg-editor-border sm:block" />
             <span className="hidden truncate text-xs text-editor-text-muted md:block sm:text-sm">
-              Éditeur de code professionnel
+              Né sur smartphone, élevé à la demoscene
             </span>
           </div>
 

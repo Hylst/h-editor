@@ -13,7 +13,7 @@ const svgPath = join(root, 'public', 'icon.svg');
 const svgBuffer = readFileSync(svgPath);
 
 async function buildIcons() {
-  console.log('Building EditorX icons from public/icon.svg...\n');
+  console.log('Building H Editor icons from public/icon.svg...\n');
 
   await sharp(svgBuffer)
     .resize(512, 512)

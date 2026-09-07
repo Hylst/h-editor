@@ -81,7 +81,7 @@ export const downloadAsZip = async (files: EditorFile[], folders: EditorFolder[]
   const url = URL.createObjectURL(blob);
   const a = document.createElement('a');
   a.href = url;
-  a.download = `editorx-projet-${new Date().toISOString().split('T')[0]}.zip`;
+  a.download = `h-editor-projet-${new Date().toISOString().split('T')[0]}.zip`;
   document.body.appendChild(a);
   a.click();
   document.body.removeChild(a);

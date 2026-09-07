@@ -1,4 +1,4 @@
-# EditorX — Roadmap & Tâches
+# H Editor — Roadmap & Tâches
 
 ## ✅ Terminé en v1.1.0 (audit + corrections, 18/08/2026)
 
@@ -44,7 +44,7 @@ Détail complet dans [plan.md](./plan.md) et [changelog.md](./changelog.md).
 ## ✅ Récemment terminé (v1.0.1)
 
 - [x] Nettoyage complet Lovable (plugin, meta tags, URLs)
-- [x] Renommage cohérent "CodeFlow Editor" → "EditorX"
+- [x] Renommage cohérent "CodeFlow Editor" → "H Editor"
 - [x] Configuration déploiement sous-chemin `/app`
 - [x] Documentation refondue/créée (README, about, structure, features, test_build_deploy, LICENSE)
 - [x] **OG image PNG 1200×630** générée depuis SVG via `npm run og:build` (script `scripts/build-og-image.mjs`)
@@ -247,7 +247,7 @@ Prévoir un test E2E par modèle ajouté, sur le patron de celui qui existe déj
 
 ## 🌐 Prévisualiser un site complet, sans backend
 
-**Question posée** : EditorX peut-il « lancer un serveur » pour tester un site HTML/CSS/JS
+**Question posée** : H Editor peut-il « lancer un serveur » pour tester un site HTML/CSS/JS
 multi-fichiers, avec bascule entre édition et aperçu ?
 
 **Réponse : oui, et sans aucun backend.** La faisabilité a été vérifiée par des essais réels dans
@@ -256,7 +256,7 @@ le navigateur (et non par déduction) — voir le tableau ci-dessous.
 ### Ce que les essais ont montré
 
 L'aperçu s'exécute dans une iframe `sandbox` **sans** `allow-same-origin` : son origine est
-*opaque*, ce qui garantit qu'une page prévisualisée ne peut pas lire le stockage d'EditorX.
+*opaque*, ce qui garantit qu'une page prévisualisée ne peut pas lire le stockage d'H Editor.
 Cette isolation impose des contraintes, mesurées :
 
 | Mécanisme envisagé | Résultat | Conséquence |

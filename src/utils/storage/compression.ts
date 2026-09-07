@@ -36,7 +36,7 @@ export const decompressEntry = async (value: unknown): Promise<string | null> =>
 
   const bytes = value instanceof ArrayBuffer ? new Uint8Array(value) : value;
   if (!hasCompressionStream()) {
-    console.warn('EditorX : contenu compressé illisible (DecompressionStream indisponible).');
+    console.warn('H Editor : contenu compressé illisible (DecompressionStream indisponible).');
     return null;
   }
 

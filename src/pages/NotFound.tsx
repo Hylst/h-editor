@@ -8,7 +8,7 @@ const NotFound = () => {
 
   useEffect(() => {
     console.error("404 — route inconnue :", location.pathname);
-    document.title = "404 — Page introuvable | EditorX";
+    document.title = "404 — Page introuvable | H Editor";
   }, [location.pathname]);
 
   return (
@@ -18,7 +18,7 @@ const NotFound = () => {
         <h1 className="mb-2 text-6xl font-bold tracking-tight">404</h1>
         <p className="mb-2 text-xl font-medium">Page introuvable</p>
         <p className="mb-8 text-sm text-muted-foreground">
-          La route <code className="rounded bg-muted px-1.5 py-0.5 text-xs">{location.pathname}</code> n'existe pas dans EditorX.
+          La route <code className="rounded bg-muted px-1.5 py-0.5 text-xs">{location.pathname}</code> n'existe pas dans H Editor.
         </p>
         <Button asChild>
           <Link to="/" aria-label="Retour à l'éditeur">

@@ -4,7 +4,7 @@ import { Toaster as Sonner, toast } from "sonner";
 type ToasterProps = React.ComponentProps<typeof Sonner>;
 
 /**
- * Le thème suit la classe `dark` posée sur <html> par les réglages EditorX.
+ * Le thème suit la classe `dark` posée sur <html> par les réglages H Editor.
  * (`next-themes` n'est plus nécessaire : aucun ThemeProvider n'était monté,
  * le composant recevait toujours "system".)
  */

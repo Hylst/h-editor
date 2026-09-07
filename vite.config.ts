@@ -41,10 +41,10 @@ export default defineConfig(() => ({
       // de partage (récupérés par les robots depuis le réseau), jamais à l'application.
       includeAssets: ["favicon.ico", "icon.svg", "icon-192.png", "icon-512.png"],
       manifest: {
-        name: "EditorX",
-        short_name: "EditorX",
+        name: "H Editor",
+        short_name: "H Editor",
         description:
-          "Éditeur de code professionnel dans votre navigateur — Monaco Editor, 40+ langages, 100% local.",
+          "Éditeur de code 100 % local, né sur smartphone — Monaco Editor, 40+ langages, hors ligne.",
         theme_color: THEME_COLOR,
         background_color: THEME_COLOR,
         display: "standalone",

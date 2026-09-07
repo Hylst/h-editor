@@ -44,7 +44,7 @@ const InfoDialog = ({ open, onOpenChange }: InfoDialogProps) => (
       <DialogHeader>
         <DialogTitle className="flex items-center gap-2 text-xl">
           <Info className="h-5 w-5 text-primary" aria-hidden="true" />
-          À propos d’EditorX
+          À propos d’H Editor
         </DialogTitle>
       </DialogHeader>
 
@@ -68,9 +68,36 @@ const InfoDialog = ({ open, onOpenChange }: InfoDialogProps) => (
           <TabsContent value="about" className="space-y-4">
             <div className="py-4 text-center">
               <p className="bg-gradient-to-r from-primary to-accent bg-clip-text text-3xl font-bold text-transparent">
-                EditorX
+                H Editor
               </p>
-              <p className="text-muted-foreground">Éditeur de code 100 % local — version {APP_VERSION}</p>
+              <p className="text-muted-foreground">
+                Un petit éditeur de code 100 % local — version {APP_VERSION}
+              </p>
+            </div>
+
+            <div className="space-y-2 rounded-lg border border-border bg-muted/40 p-4">
+              <h3 className="font-semibold">Petite histoire</h3>
+              <p className="text-sm text-muted-foreground">
+                H Editor est né il y a deux ans d’un besoin tout simple : pouvoir éditer du code
+                sur smartphone et sur tablette, en attendant de retrouver un vrai clavier à la
+                maison. Il a bien grandi depuis — et reste, avant tout, un plaisir à développer.
+              </p>
+              <p className="text-sm text-muted-foreground">
+                Derrière ce projet : Geoffroy, développeur passionné de rétro-informatique,
+                d’ATARI ST et de demoscene — l’animation du titre dans l’en-tête est un petit clin
+                d’œil à cette époque où chaque couleur de palette comptait. Sans prétention :
+                l’outil ne remplace pas votre IDE, il vous suit simplement partout.
+              </p>
+            </div>
+
+            <div className="space-y-2">
+              <h3 className="font-semibold">Ce que vous pouvez faire ici</h3>
+              <ul className="list-inside list-disc space-y-1 text-sm text-muted-foreground">
+                <li>Éditer plus de 40 langages avec le moteur de VS Code, formatage Prettier inclus.</li>
+                <li>Organiser un projet (dossiers, ZIP, JSON) et le retrouver intact à chaque retour.</li>
+                <li>Prévisualiser du Markdown ou un site multi-fichiers, console interactive comprise.</li>
+                <li>Installer l’app (PWA) et travailler hors ligne — tout reste dans votre navigateur.</li>
+              </ul>
             </div>
 
             <div className="space-y-2 rounded-lg border border-border bg-muted/40 p-4">
@@ -92,13 +119,18 @@ const InfoDialog = ({ open, onOpenChange }: InfoDialogProps) => (
             <div className="space-y-2">
               <h3 className="font-semibold">Technologies</h3>
               <p className="text-sm text-muted-foreground">
-                React 18, TypeScript, Vite, Monaco Editor, Tailwind CSS, Radix UI, Prettier, JSZip.
+                React 18, TypeScript, Vite, Monaco Editor, Tailwind CSS, Radix UI, Prettier, JSZip —
+                le tout sans backend : vos données ne quittent jamais votre navigateur.
               </p>
             </div>
 
             <div className="space-y-1">
               <h3 className="font-semibold">Créateur</h3>
-              <p className="text-sm text-muted-foreground">{APP_AUTHOR} — licence MIT</p>
+              <p className="text-sm text-muted-foreground">
+                {APP_AUTHOR} — licence MIT. L’outil est offert, sans publicité ni compte. Vos
+                retours, idées et rapports de bugs sont très bienvenus : c’est ce qui le rend
+                meilleur, un commit à la fois.
+              </p>
             </div>
           </TabsContent>
 

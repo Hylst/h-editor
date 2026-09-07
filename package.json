@@ -1,8 +1,8 @@
 {
-  "name": "editorx",
+  "name": "h-editor",
   "private": true,
   "version": "1.7.0",
-  "description": "EditorX - Éditeur de code en ligne moderne basé sur Monaco Editor",
+  "description": "H Editor - Éditeur de code en ligne moderne basé sur Monaco Editor",
   "author": "Geoffroy Streit <geoffroy.streit@gmail.com>",
   "license": "MIT",
   "homepage": "https://hylst.fr/app",

@@ -1,4 +1,4 @@
-# Reprise du développement — EditorX
+# Reprise du développement — H Editor
 
 > Document de passation. À lire **en entier** avant toute modification : il contient des pièges
 > qui ont réellement coûté des régressions, et des invariants qu'un refactoring naïf casse.
@@ -9,7 +9,7 @@
 
 ## 1. En deux minutes
 
-**EditorX** est un éditeur de code **100 % front-end** : aucun backend, aucun compte, aucune requête
+**H Editor** est un éditeur de code **100 % front-end** : aucun backend, aucun compte, aucune requête
 vers un tiers. React 18 + TypeScript strict + Vite + Monaco, déployé sous `/app/`.
 
 ```bash

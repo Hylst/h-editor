@@ -124,7 +124,7 @@ const MonacoEditorInner = forwardRef<MonacoEditorRef, MonacoEditorProps>(
         <div className="flex h-full items-center justify-center bg-editor-background">
           <div className="space-y-4 text-center px-6">
             <div className="bg-gradient-to-r from-primary to-accent bg-clip-text text-4xl font-bold text-transparent">
-              EditorX
+              H Editor
             </div>
             <p className="text-editor-text-muted">
               Ouvrez un fichier pour commencer, ou créez-en un avec Ctrl+N

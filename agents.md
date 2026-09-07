@@ -1,4 +1,4 @@
-# AGENTS.md — EditorX
+# AGENTS.md — H Editor
 
 Instructions pour les agents de codage (opencode, Claude Code, Cursor…).
 Lire aussi `continue.md` pour le contexte détaillé et les pièges connus.

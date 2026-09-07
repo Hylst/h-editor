@@ -1,8 +1,8 @@
-# À propos d'EditorX
+# À propos d'H Editor
 
 ## Description
 
-**EditorX** est un éditeur de code en ligne moderne, rapide et 100 % front-end, construit avec **React 18** et **Monaco Editor** (le moteur d'édition de VS Code). Il offre une expérience de développement complète directement dans votre navigateur, sans backend, sans inscription, sans tracking — et **sans aucune requête vers un tiers** : l'éditeur Monaco et la police sont embarqués dans l'application, qui fonctionne donc hors ligne.
+**H Editor** est un éditeur de code en ligne moderne, rapide et 100 % front-end, construit avec **React 18** et **Monaco Editor** (le moteur d'édition de VS Code). Il offre une expérience de développement complète directement dans votre navigateur, sans backend, sans inscription, sans tracking — et **sans aucune requête vers un tiers** : l'éditeur Monaco et la police sont embarqués dans l'application, qui fonctionne donc hors ligne.
 
 L'idée : vous ouvrez l'URL, vous codez, vos fichiers restent chez vous (localStorage + IndexedDB + File System Access API). Vous pouvez aussi importer/exporter vos projets en ZIP en un clic.
 
@@ -76,7 +76,7 @@ Détails techniques dans [structure.md](./structure.md).
 
 ## Philosophie
 
-EditorX repose sur quelques principes simples :
+H Editor repose sur quelques principes simples :
 
 1. **Local-first** — Vos données restent dans votre navigateur. Pas de cloud, pas de tracking, pas de compte requis.
 2. **Zéro friction** — Ouvrez l'URL, codez. Aucune installation, aucune configuration.
@@ -88,7 +88,7 @@ EditorX repose sur quelques principes simples :
 
 ## Différence avec les alternatives
 
-| | EditorX | VS Code | CodeSandbox | StackBlitz |
+| | H Editor | VS Code | CodeSandbox | StackBlitz |
 |---|---|---|---|---|
 | Installation | ❌ aucune | ✅ desktop | ❌ aucune | ❌ aucune |
 | Backend | ❌ aucun | — | ✅ cloud | ✅ cloud |
@@ -97,13 +97,13 @@ EditorX repose sur quelques principes simples :
 | Exécution de code | ❌ pas encore | ✅ via terminal | ✅ sandbox | ✅ WebContainer |
 | Poids | léger | gros | moyen | moyen |
 
-EditorX est positionné comme un **éditeur de texte/code rapide pour le navigateur**, pas un IDE complet. C'est sa force : simplicité, vitesse, confidentialité.
+H Editor est positionné comme un **éditeur de texte/code rapide pour le navigateur**, pas un IDE complet. C'est sa force : simplicité, vitesse, confidentialité.
 
 ---
 
 ## Historique
 
-EditorX est né d'un prototype bootstrapé sur la plateforme **Lovable**, puis émancipé et autonomisé en projet open-source maintenu par son auteur. Toutes les références à la plateforme initiale ont été retirées (cf. [changelog v1.0.1](./changelog.md)).
+H Editor est né d'un prototype bootstrapé sur la plateforme **Lovable**, puis émancipé et autonomisé en projet open-source maintenu par son auteur. Toutes les références à la plateforme initiale ont été retirées (cf. [changelog v1.0.1](./changelog.md)).
 
 Le projet est désormais hébergé chez son auteur sous l'URL [hylst.fr/app](https://hylst.fr/app/).
 
@@ -124,12 +124,12 @@ Sous licence **MIT** — voir [LICENSE](./LICENSE). Vous êtes libre de l'utilis
 
 ---
 
-*EditorX — un éditeur de code qui respecte votre temps et vos données.*
+*H Editor — un éditeur de code qui respecte votre temps et vos données.*
 
 
 ---
 
-## Ce qui distingue EditorX
+## Ce qui distingue H Editor
 
 **Rien ne sort de votre navigateur.** L'éditeur Monaco et la police sont embarqués dans
 l'application : aucune requête vers un CDN, aucun compte, aucune télémétrie. L'application

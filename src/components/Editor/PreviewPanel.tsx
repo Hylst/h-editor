@@ -88,7 +88,7 @@ type ViewportId = (typeof VIEWPORTS)[number]['id'];
  *   par ZIP/JSON ne peut pas exécuter de script dans l'origine de l'application.
  * - Le HTML est rendu dans une iframe `sandbox` sans `allow-same-origin` : les
  *   scripts de la page s'exécutent, mais dans une origine opaque, sans accès au
- *   stockage d'EditorX. Leur `console.*` est relayée via `postMessage`.
+ *   stockage d'H Editor. Leur `console.*` est relayée via `postMessage`.
  */
 const PreviewPanel = ({
   content,

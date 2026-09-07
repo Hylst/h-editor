@@ -147,7 +147,7 @@ export class LocalWorkspaceStore implements WorkspaceStore {
       meta = JSON.parse(raw);
     } catch {
       // Métadonnées corrompues : on ne bloque pas le démarrage.
-      console.error('EditorX : métadonnées illisibles, tentative de restauration héritée.');
+      console.error('H Editor : métadonnées illisibles, tentative de restauration héritée.');
       return this.readLegacy();
     }
 

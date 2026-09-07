@@ -88,7 +88,7 @@ test.describe('Fonctionnement hors ligne', () => {
     await page.goto('./route-inconnue-offline');
 
     // Le navigateFallback doit servir offline.html, pas une erreur brute.
-    await expect(page).toHaveTitle('EditorX — Hors ligne');
+    await expect(page).toHaveTitle('H Editor — Hors ligne');
     await expect(page.getByRole('link', { name: "Retour à l'éditeur" })).toBeVisible();
 
     await context.setOffline(false);

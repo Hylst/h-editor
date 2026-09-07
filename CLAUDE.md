@@ -22,7 +22,7 @@ CI (`.github/workflows/ci.yml`) runs lint + typecheck + unit tests + build + Pla
 
 ## Architecture
 
-**EditorX** is a 100% client-side web IDE (no backend). React 18 + TypeScript + Vite + Monaco Editor.
+**H Editor** is a 100% client-side web IDE (no backend). React 18 + TypeScript + Vite + Monaco Editor.
 
 ### State management
 

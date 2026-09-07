@@ -230,6 +230,6 @@ test.describe('Fonctionnalités', () => {
     await page.getByRole('menuitem', { name: 'Exporter en ZIP' }).click();
 
     const download = await downloadPromise;
-    expect(download.suggestedFilename()).toMatch(/^editorx-projet-\d{4}-\d{2}-\d{2}\.zip$/);
+    expect(download.suggestedFilename()).toMatch(/^h-editor-projet-\d{4}-\d{2}-\d{2}\.zip$/);
   });
 });

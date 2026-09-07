@@ -1,4 +1,4 @@
-# Contribuer à EditorX
+# Contribuer à H Editor
 
 Merci de votre intérêt ! Ce document décrit les conventions à respecter pour que votre
 contribution soit intégrée rapidement.

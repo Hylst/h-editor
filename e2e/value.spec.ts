@@ -80,7 +80,7 @@ test.describe('Apports fonctionnels', () => {
     });
   });
 
-  test('la page prévisualisée n’accède pas au stockage d’EditorX', async ({ page }) => {
+  test('la page prévisualisée n’accède pas au stockage d’H Editor', async ({ page }) => {
     // L'iframe est en `sandbox` sans `allow-same-origin` : son origine est opaque.
     await page.keyboard.press('Control+n');
     const item = page.getByRole('treeitem').filter({ hasText: 'nouveau-fichier-1.txt' }).first();

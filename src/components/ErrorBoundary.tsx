@@ -25,7 +25,7 @@ class ErrorBoundary extends Component<Props, State> {
   }
 
   componentDidCatch(error: Error, info: ErrorInfo) {
-    console.error('EditorX — erreur non rattrapée :', error, info.componentStack);
+    console.error('H Editor — erreur non rattrapée :', error, info.componentStack);
   }
 
   private handleReload = () => window.location.reload();
@@ -48,7 +48,7 @@ class ErrorBoundary extends Component<Props, State> {
   };
 
   private handleReset = () => {
-    if (!window.confirm('Effacer les données locales d’EditorX et redémarrer ?')) return;
+    if (!window.confirm('Effacer les données locales d’H Editor et redémarrer ?')) return;
     try {
       localStorage.clear();
       indexedDB?.deleteDatabase('editorx');
@@ -69,7 +69,7 @@ class ErrorBoundary extends Component<Props, State> {
             <div>
               <h1 className="text-xl font-semibold text-foreground">Une erreur est survenue</h1>
               <p className="text-sm text-muted-foreground">
-                EditorX s’est arrêté, mais vos fichiers sont toujours dans le stockage local.
+                H Editor s’est arrêté, mais vos fichiers sont toujours dans le stockage local.
               </p>
             </div>
           </div>

@@ -1,4 +1,4 @@
-# Fonctionnalités d'EditorX
+# Fonctionnalités d'H Editor
 
 Inventaire détaillé des fonctionnalités, organisé par catégorie. Statuts : ✅ Disponible · 🚧 En cours · 📋 Roadmap.
 
@@ -98,7 +98,7 @@ Inventaire détaillé des fonctionnalités, organisé par catégorie. Statuts : 
 | Thème vs-dark (par défaut) | ✅ | Monaco theme |
 | Thème vs-light | ✅ | Settings |
 | Thème hc-black (haut contraste) | ✅ | Settings |
-| Thème clair custom EditorX | ✅ | Interface + éditeur, ou suivi du thème système (v1.1.0) |
+| Thème clair custom H Editor | ✅ | Interface + éditeur, ou suivi du thème système (v1.1.0) |
 | Thème haut contraste custom | 📋 | À faire |
 | Import/export de thèmes | 📋 | À faire |
 

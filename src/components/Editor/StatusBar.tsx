@@ -6,7 +6,7 @@ import type { StorageUsage } from '@/services/workspace';
 import type { SplitView } from '@/hooks/useSplitLayout';
 import { Button } from '@/components/ui/button';
 import { useInstallPrompt } from '@/hooks/useInstallPrompt';
-import { APP_VERSION } from '@/utils/appInfo';
+import { APP_NAME, APP_VERSION } from '@/utils/appInfo';
 
 interface StatusBarProps {
   activeFile: EditorFile | null;
@@ -180,7 +180,7 @@ const StatusBar = ({
               type="button"
               onClick={install}
               className="flex items-center gap-1 hover:text-editor-text"
-              aria-label="Installer EditorX sur cet appareil"
+              aria-label="Installer H Editor sur cet appareil"
               title="Installer l'application sur cet appareil"
             >
               <Download className="h-3 w-3" aria-hidden="true" />
@@ -196,7 +196,7 @@ const StatusBar = ({
           aria-label="Ouvrir les paramètres"
         >
           <Settings className="h-3 w-3" aria-hidden="true" />
-          EditorX v{APP_VERSION}
+          {APP_NAME} v{APP_VERSION}
         </button>
       </div>
     </footer>

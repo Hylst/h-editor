@@ -1,4 +1,4 @@
-# EditorX — Audit, corrections et plan
+# H Editor — Audit, corrections et plan
 
 > **Audit** réalisé le 18/08/2026 sur la v1.0.1 : lecture intégrale du code, `tsc`, `eslint`,
 > et campagne E2E réelle dans Chrome (parcours utilisateur, console, arbre d'accessibilité,

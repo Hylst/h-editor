@@ -14,7 +14,7 @@ Améliorations PWA et affichage mobile.
 ### ✅ Page de fallback hors ligne (Added)
 
 `public/offline.html` est désormais servie par le service worker (`navigateFallback`) quand une
-navigation échoue faute de réseau. La page précise qu'EditorX fonctionne hors ligne et offre un
+navigation échoue faute de réseau. La page précise qu'H Editor fonctionne hors ligne et offre un
 lien de retour vers l'éditeur. Le fallback n'intercepte ni les appels `/api/` ni les fichiers à
 extension (les assets 404 ne sont pas masqués par la page hors ligne).
 
@@ -36,6 +36,25 @@ responsive a été adapté pour couvrir ce nouveau comportement.
 - second screenshot au format portrait (`narrow`) ;
 - balises iOS ajoutées dans `index.html` (`apple-mobile-web-app-capable`,
   `apple-mobile-web-app-status-bar-style`, icône 512 px).
+
+### ✏️ Renommage : EditorX devient H Editor (Changed)
+
+Le nom change dans toute l'interface, le manifeste PWA, les métadonnées SEO, les icônes (la
+lettre « E » devient « H ») et la documentation. Le sous-titre de l'en-tête « Éditeur de code
+professionnel » laisse place à « Né sur smartphone, élevé à la demoscene », et le titre se
+pare d'un cycle de couleurs régulier, hommage aux démos de l'époque — désactivé pour les
+utilisateurs en `prefers-reduced-motion`.
+
+**Les clés de stockage restent inchangées** (`editorx-workspace`, `editorx-settings`, base
+IndexedDB `editorx`, canaux `editorx-preview-*`) : les renommer aurait rendu illisibles les
+données des utilisateurs existants. La compatibilité des espaces de travail est préservée.
+
+### 🛠️ Import JSON (Fixed)
+
+Un JSON valide qui n'est pas une sauvegarde de projet (une config, des données…) était rejeté
+comme « Fichier JSON invalide ». Il est désormais **ajouté au projet comme fichier ordinaire**,
+onglet ouvert, avec une notification qui explique le cas ; seuls les JSON illisibles produisent
+une erreur. Test de non-régression : `analyzeJSONImport`.
 
 ---
 
@@ -139,7 +158,7 @@ sécurité des données, et validation sur trois moteurs de navigateur.
 - **Console dans l'aperçu HTML.** Les appels à `console.log/info/warn/error/debug`, les erreurs non
   rattrapées et les promesses rejetées de la page prévisualisée s'affichent sous l'aperçu.
   Le pont passe par `postMessage` : l'iframe reste en `sandbox` **sans** `allow-same-origin`, donc
-  la page n'accède ni au stockage ni au DOM d'EditorX — vérifié par un test dédié.
+  la page n'accède ni au stockage ni au DOM d'H Editor — vérifié par un test dédié.
 - **Modèles de fichiers** : 8 points de départ (HTML5, composant React, module TypeScript, script
   Python, document Markdown, configuration JSON, feuille de styles, schéma SQL), accessibles depuis
   l'explorateur et la palette de commandes.
@@ -387,7 +406,7 @@ sécurisation de l'aperçu, auto-hébergement de Monaco et des polices, refonte 
 - **`index.html`** : suppression du `<link rel="manifest">` manuel (le plugin l'injecte) ; ajout d'un commentaire explicatif
 
 ### 🎨 Branding & Icônes (Added)
-- **`public/icon.svg`** — logo mark EditorX "E" carré scalable (source vectorielle des icônes)
+- **`public/icon.svg`** — logo mark H Editor "E" carré scalable (source vectorielle des icônes)
 - **`public/icon-192.png`** (192×192) et **`public/icon-512.png`** (512×512) — icônes PWA générées depuis `icon.svg` via `sharp`
 - **`public/favicon.ico`** — favicon 32×32 PNG-in-ICO (remplace le placeholder Vite générique)
 - **`index.html`** : ajout de `<link rel="icon" type="image/svg+xml" href="icon.svg">` (priorité navigateurs modernes) + `apple-touch-icon` mis à jour vers `icon-192.png`
@@ -422,7 +441,7 @@ sécurisation de l'aperçu, auto-hébergement de Monaco et des polices, refonte 
   - Remplacement des meta tags OG/Twitter pointant vers `lovable.dev/...` par l'image locale `og-image.png`
   - Remplacement de `@lovable_dev` (twitter:site) par `@hylst`
   - Mise à jour des URLs canoniques et `og:url` de `editorx.app` vers `https://hylst.fr/app/`
-- **Renommage cohérent** "CodeFlow Editor" → **EditorX** dans toute la documentation (README, about, structure)
+- **Renommage cohérent** "CodeFlow Editor" → **H Editor** dans toute la documentation (README, about, structure)
 - **`package.json`** : nom, description, auteur, licence, homepage renseignés (était `vite_react_shadcn_ts` / `0.0.0`)
 
 ### 🐛 Corrections (Fixed)
@@ -431,7 +450,7 @@ sécurisation de l'aperçu, auto-hébergement de Monaco et des polices, refonte 
 - **`NotFound.tsx`** : ajout d'icônes Lucide, mise à jour du `document.title`, message en français
 
 ### 🎨 SEO & Branding (Added)
-- **`public/og-image.png`** (1200 × 630, 31 KB) — image Open Graph branded EditorX/hylst, générée depuis `og-image.svg`
+- **`public/og-image.png`** (1200 × 630, 31 KB) — image Open Graph branded H Editor/hylst, générée depuis `og-image.svg`
 - **`public/og-image.svg`** — source vectorielle de l'OG image (éditable)
 - **`scripts/build-og-image.mjs`** — script de régénération PNG (`npm run og:build`)
 - **`public/manifest.webmanifest`** — manifeste PWA basique (`scope: /app/`, `theme_color`, icons)

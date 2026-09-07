@@ -40,7 +40,7 @@
         <text x="32" y="242">8</text>
         <text x="32" y="266">9</text>
       </g>
-      <text x="48" y="74" fill="#e2e8f0"><tspan fill="#c084fc">import </tspan>{ <tspan fill="#f59e0b">Editor</tspan> } <tspan fill="#c084fc">from </tspan><tspan fill="#86efac">'editorx'</tspan>;</text>
+      <text x="48" y="74" fill="#e2e8f0"><tspan fill="#c084fc">import </tspan>{ <tspan fill="#f59e0b">Editor</tspan> } <tspan fill="#c084fc">from </tspan><tspan fill="#86efac">'h-editor'</tspan>;</text>
       <text x="48" y="122" fill="#94a3b8">// Code in the browser.</text>
       <text x="48" y="146" fill="#94a3b8">// Your data stays yours.</text>
       <text x="48" y="194" fill="#e2e8f0"><tspan fill="#c084fc">const </tspan><tspan fill="#60a5fa">app </tspan>= () =&gt; (</text>
@@ -53,12 +53,12 @@
   <!-- Logo mark -->
   <g transform="translate(80, 100)">
     <rect x="0" y="0" width="72" height="72" rx="16" fill="url(#accent)"/>
-    <text x="36" y="51" text-anchor="middle" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif" font-size="42" font-weight="800" fill="#ffffff">E</text>
+    <text x="36" y="51" text-anchor="middle" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif" font-size="42" font-weight="800" fill="#ffffff">H</text>
   </g>
 
   <!-- Headline -->
   <g font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif">
-    <text x="80" y="248" font-size="92" font-weight="800" fill="#ffffff" letter-spacing="-3">EditorX</text>
+    <text x="80" y="248" font-size="92" font-weight="800" fill="#ffffff" letter-spacing="-3">H Editor</text>
     <text x="80" y="300" font-size="30" font-weight="500" fill="#cbd5e1">L'éditeur de code dans votre navigateur</text>
     <text x="80" y="344" font-size="20" font-weight="400" fill="#94a3b8">React · Monaco · 40+ langages · 100 % local · sans tracking</text>
   </g>

@@ -1,4 +1,4 @@
-# Test, Build et Déploiement d'EditorX
+# Test, Build et Déploiement d'H Editor
 
 Guide complet pour **débutants** : tester l'app en local sur Windows, produire un build de production, puis la déployer sur un VPS Hostinger géré par **Coolify**, derrière **Nginx**, à l'URL `https://hylst.fr/app/`.
 
@@ -155,7 +155,7 @@ Ouvrir **<http://localhost:4173/app/>**. Vous testez **exactement** le bundle qu
 
 ### C.2 Choix de la stratégie
 
-EditorX est un **site 100 % statique** — pas de Node, pas de Docker à exécuter. Deux options :
+H Editor est un **site 100 % statique** — pas de Node, pas de Docker à exécuter. Deux options :
 
 **Option 1 (recommandée pour `hylst.fr/app`)** : déposer les fichiers statiques dans un dossier servi par le Nginx du site principal, sous le `location /app/`.
 
@@ -216,7 +216,7 @@ server {
     root /var/www/hylst/public;   # exemple — à adapter
     index index.html;
 
-    # ─── EditorX servi sous /app/ ───────────────────────────
+    # ─── H Editor servi sous /app/ ───────────────────────────
     location /app/ {
         alias /var/www/hylst/app/;
         index index.html;
@@ -233,7 +233,7 @@ server {
 }
 ```
 
-> **Pourquoi `try_files ... /app/index.html` ?** Parce qu'EditorX est une SPA React. Si quelqu'un recharge la page sur `https://hylst.fr/app/settings` (par exemple), Nginx ne doit pas chercher un fichier `settings` qui n'existe pas — il doit renvoyer `index.html` et laisser React Router gérer.
+> **Pourquoi `try_files ... /app/index.html` ?** Parce qu'H Editor est une SPA React. Si quelqu'un recharge la page sur `https://hylst.fr/app/settings` (par exemple), Nginx ne doit pas chercher un fichier `settings` qui n'existe pas — il doit renvoyer `index.html` et laisser React Router gérer.
 
 ### C.6 Tester et recharger Nginx
 
@@ -304,7 +304,7 @@ Idéal pour tester rapidement avant de déployer sur votre VPS.
 | F5 sur une route retourne 404 | Bloc `try_files` manquant dans Nginx | Ajouter `try_files $uri $uri/ /app/index.html;` |
 | Routes React cassées (URL change mais l'app ne réagit pas) | Oubli du `basename="/app"` dans `<BrowserRouter>` | Rebuild après correction |
 | HTTPS ne marche pas | Let's Encrypt pas (re)configuré | Coolify → "Generate SSL Certificate" |
-| `npm install` échoue (Windows : "node-gyp" / "Python") | Outils de build natifs manquants — pas grave pour EditorX (pas de natif) | Réessayer, ou `npm install --no-optional` |
+| `npm install` échoue (Windows : "node-gyp" / "Python") | Outils de build natifs manquants — pas grave pour H Editor (pas de natif) | Réessayer, ou `npm install --no-optional` |
 | Port 8080 déjà occupé | Autre app utilise le port | Modifier `port` dans `vite.config.ts` ou tuer le process : `Get-NetTCPConnection -LocalPort 8080` |
 | `npm run dev` ouvre `http://localhost:8080/` (sans /app/) | Vous avez retiré le `base` | Soit ajouter `/app/` à l'URL, soit retirer `base` dans `vite.config.ts` |
 | Cache navigateur tenace | Anciens fichiers cachés | `Ctrl+F5` (hard reload) ou DevTools → "Disable cache" |

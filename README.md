@@ -1,4 +1,4 @@
-# EditorX
+# H Editor
 
 Un éditeur de code en ligne moderne, rapide et 100 % front-end, construit avec **React 18**, **Monaco Editor** et **Vite**.
 
@@ -9,7 +9,7 @@ Un éditeur de code en ligne moderne, rapide et 100 % front-end, construit avec 
 ![Vite](https://img.shields.io/badge/Vite-8.0-646cff.svg)
 ![Tests](https://img.shields.io/badge/tests-144%20unitaires%20%2B%20121%20E2E-brightgreen.svg)
 
-EditorX est un IDE léger qui tient dans votre navigateur : pas de backend, pas de tracking, **aucune requête vers un tiers** (Monaco et les polices sont embarqués). Vos fichiers restent sur votre machine — métadonnées en `localStorage`, contenu en `IndexedDB`, écriture disque via la File System Access API. Pensé pour le développeur qui veut éditer, prototyper, prévisualiser sans installer un IDE complet.
+H Editor est un IDE léger qui tient dans votre navigateur : pas de backend, pas de tracking, **aucune requête vers un tiers** (Monaco et les polices sont embarqués). Vos fichiers restent sur votre machine — métadonnées en `localStorage`, contenu en `IndexedDB`, écriture disque via la File System Access API. Pensé pour le développeur qui veut éditer, prototyper, prévisualiser sans installer un IDE complet.
 
 > Démo prévue : `https://hylst.fr/app/`
 
@@ -128,7 +128,7 @@ npm run test:all   # Tout : lint + types + unitaires + E2E
 
 ### Tester un site sans serveur
 
-EditorX assemble votre projet **en mémoire** pour le prévisualiser : les feuilles de styles, les
+H Editor assemble votre projet **en mémoire** pour le prévisualiser : les feuilles de styles, les
 scripts, les modules ES (`import './util.js'`), les images et les `url()` CSS sont résolus, et
 `fetch` sert les fichiers du projet. Les liens internes permettent de naviguer entre les pages.
 
@@ -155,6 +155,18 @@ l'éditeur. Un service worker n'aurait pas permis cette garantie.
 | Explorateur | Filtre rapide, virtualisation au-delà de 300 entrées, largeur réglable |
 | Corbeille | Les 20 dernières suppressions restent restaurables |
 
+### 📲 Installable et hors ligne (PWA)
+
+H Editor s'installe comme une application : bouton **« Installer »** dans la barre d'état dès que
+le navigateur le permet (desktop comme mobile), raccourcis d'application (« Nouveau fichier »,
+« Importer », « Mode Zen ») depuis l'icône, et balises iOS pour l'installation sur iPhone/iPad.
+
+Une fois installée, l'application **fonctionne hors ligne** : Monaco et la police sont précachés
+(37 entrées, ~5,5 Mo), et les navigations sans réseau aboutissent sur une page de fallback dédiée
+plutôt que sur une erreur. Le tout est vérifié par des tests E2E qui coupent réellement le réseau.
+
+Sur mobile, l'explorateur démarre replié sous 768 px pour laisser la place à l'éditeur.
+
 ### Stockage et confidentialité
 
 | Donnée | Emplacement |
@@ -165,7 +177,7 @@ l'éditeur. Un service worker n'aurait pas permis cette garantie.
 | Fichiers du disque | Uniquement via la File System Access API, sur action explicite |
 
 Aucune donnée ne sort du navigateur. L'éditeur Monaco (~4 Mo) et la police JetBrains Mono sont
-servis par l'application elle-même : **EditorX fonctionne hors ligne** une fois installé en PWA.
+servis par l'application elle-même : **H Editor fonctionne hors ligne** une fois installé en PWA.
 
 Détails dans [structure.md](./structure.md).
 
@@ -173,7 +185,7 @@ Détails dans [structure.md](./structure.md).
 
 ## 🚢 Déploiement
 
-EditorX se déploie comme un **site statique** (rien à exécuter côté serveur).
+H Editor se déploie comme un **site statique** (rien à exécuter côté serveur).
 
 Le guide complet — depuis le test local Windows jusqu'au déploiement sur VPS Hostinger avec Coolify + Nginx sous l'URL `https://hylst.fr/app/` — est dans [test_build_deploy.md](./test_build_deploy.md).
 
@@ -206,7 +218,7 @@ MIT — voir [LICENSE](./LICENSE).
 **Geoffroy Streit** ([hylst.fr](https://hylst.fr))
 📧 [geoffroy.streit@gmail.com](mailto:geoffroy.streit@gmail.com)
 
-EditorX est un projet personnel open-source. Vos retours, idées et contributions sont les bienvenus.
+H Editor est un projet personnel open-source. Vos retours, idées et contributions sont les bienvenus.
 
 ---
 

@@ -2,7 +2,7 @@
  * Console de l'aperçu HTML.
  *
  * Le document prévisualisé s'exécute dans une iframe `sandbox` **sans**
- * `allow-same-origin` : il ne peut donc pas accéder au stockage d'EditorX, et
+ * `allow-same-origin` : il ne peut donc pas accéder au stockage d'H Editor, et
  * l'application ne peut pas lire son DOM. Le seul canal possible est
  * `postMessage`, ce que ce module met en place.
  *

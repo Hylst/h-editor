@@ -1,7 +1,7 @@
 /**
  * Contrat de stockage de l'espace de travail (port).
  *
- * EditorX est 100 % front-end : la seule implémentation active est locale
+ * H Editor est 100 % front-end : la seule implémentation active est locale
  * (`localStore.ts`, localStorage + IndexedDB). Ce contrat existe pour que
  * l'ajout éventuel d'un backend (synchronisation, partage, multi-appareils)
  * se fasse **sans toucher à l'interface utilisateur** : il suffira de fournir
@@ -60,7 +60,7 @@ export interface StorageUsage {
   usage: number;
   /** Quota annoncé par le navigateur. */
   quota: number;
-  /** Poids du projet EditorX lui-même (somme des contenus). */
+  /** Poids du projet H Editor lui-même (somme des contenus). */
   workspaceBytes: number;
 }
 

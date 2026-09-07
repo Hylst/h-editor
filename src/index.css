@@ -5,7 +5,7 @@
 @tailwind utilities;
 
 /*
-  Système de design EditorX — toutes les couleurs sont en HSL.
+  Système de design H Editor — toutes les couleurs sont en HSL.
 
   `:root` porte le thème CLAIR, `.dark` le thème SOMBRE (mode `class` de Tailwind,
   piloté par le réglage « Thème de l'interface »). Auparavant une seule palette
@@ -98,7 +98,7 @@
   }
 
   .dark {
-    /* ── Thème sombre (défaut d'EditorX) ───────────────────────────────── */
+    /* ── Thème sombre (défaut d'H Editor) ───────────────────────────────── */
     --background: 220 15% 12%;
     --foreground: 210 20% 98%;
 
@@ -203,6 +203,39 @@
 .animate-fade-in {
   animation: fade-in 0.2s ease-out;
 }
+
+/* ── Titre de l'application : cycle de couleurs régulier, hommage aux
+   changements de palette de la demoscene. Chaque lettre est décalée dans le
+   cycle (--char-index) pour une onde qui traverse le nom. Le bloc global
+   `prefers-reduced-motion` en fin de fichier gèle l'animation pour celles et
+   ceux qui le demandent. ────────────────────────────────────────────────── */
+@keyframes app-title-cycle {
+  0% {
+    color: hsl(195 95% 58%);
+  }
+  25% {
+    color: hsl(280 85% 74%);
+  }
+  50% {
+    color: hsl(330 90% 70%);
+  }
+  75% {
+    color: hsl(45 95% 62%);
+  }
+  100% {
+    color: hsl(195 95% 58%);
+  }
+}
+
+.app-title-char {
+  display: inline-block;
+  animation: app-title-cycle 6s linear infinite;
+  animation-delay: calc(var(--char-index, 0) * -0.45s);
+}
+
+/* ── Titre de l'application : cycle de couleurs régulier, hommage aux
+   changements de palette de la demoscene. Chaque lettre est décalée dans le
+   cycle (--char-index) pour une onde qui traverse le nom. ─────────────────── */
 
 @media (prefers-reduced-motion: reduce) {
   *,

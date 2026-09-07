@@ -1,7 +1,7 @@
 /**
  * Assemblage d'un site multi-fichiers en un document autonome.
  *
- * EditorX n'a pas de serveur, et l'aperçu s'exécute dans une iframe `sandbox`
+ * H Editor n'a pas de serveur, et l'aperçu s'exécute dans une iframe `sandbox`
  * **sans** `allow-same-origin` : son origine est opaque, ce qui garantit qu'une
  * page prévisualisée ne peut pas lire le stockage de l'éditeur. Cette isolation
  * interdit deux approches qu'on choisirait spontanément (vérifié par essais) :

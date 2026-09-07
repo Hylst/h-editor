@@ -3,9 +3,9 @@ import { createId } from './ids';
 
 export const WELCOME_FILE_NAME = 'bienvenue.md';
 
-const WELCOME_CONTENT = `# Bienvenue dans EditorX
+const WELCOME_CONTENT = `# Bienvenue dans H Editor
 
-**EditorX** est un éditeur de code et de texte 100 % local : aucun serveur, aucun compte,
+**H Editor** est un éditeur de code et de texte 100 % local : aucun serveur, aucun compte,
 vos fichiers ne quittent jamais votre navigateur.
 
 ## Prise en main

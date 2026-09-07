@@ -1,6 +1,6 @@
-# Structure du projet EditorX
+# Structure du projet H Editor
 
-Ce document décrit l'architecture technique d'EditorX en détail : organisation des dossiers, flux de données, conventions de code, design system et points d'attention performance.
+Ce document décrit l'architecture technique d'H Editor en détail : organisation des dossiers, flux de données, conventions de code, design system et points d'attention performance.
 
 > État vérifié au 25/08/2026 sur la v1.7.0 (comptages et tailles mesurés, pas estimés).
 
@@ -260,7 +260,7 @@ Toute valeur lue du stockage passe par `sanitizeSettings()` (validation, bornage
 
 ## 💾 Persistance
 
-EditorX n'a aucun backend. Toute la donnée vit côté navigateur :
+H Editor n'a aucun backend. Toute la donnée vit côté navigateur :
 
 | Mécanisme | Usage |
 |-----------|-------|
@@ -362,7 +362,7 @@ Autres points :
 
 ## 🚢 Configuration de déploiement (sous-chemin `/app`)
 
-EditorX est servi sous `https://hylst.fr/app/`. Deux ajustements qui doivent rester synchronisés :
+H Editor est servi sous `https://hylst.fr/app/`. Deux ajustements qui doivent rester synchronisés :
 
 ### `vite.config.ts`
 ```ts
@@ -380,7 +380,7 @@ Sans ces deux modifications, les assets retournent 404 et les routes React casse
 
 ## 🧪 Couche de stockage (`src/services/workspace/`)
 
-EditorX reste **100 % front-end**, mais la persistance passe par un contrat explicite
+H Editor reste **100 % front-end**, mais la persistance passe par un contrat explicite
 pour rester *back-end ready* :
 
 | Fichier | Rôle |

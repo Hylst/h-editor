@@ -1,4 +1,4 @@
-# Annonce de lancement — EditorX
+# Annonce de lancement — H Editor
 
 > Post prêt à publier. Version longue pour LinkedIn / blog, version courte pour X/Twitter.
 > Tous les chiffres cités sont mesurés et vérifiés par les tests du projet (09/2026).
@@ -7,9 +7,9 @@
 
 ## 🚀 Version longue (LinkedIn / blog)
 
-**Après des mois de développement, je suis fier d'annoncer qu'EditorX est terminé et en ligne : https://hylst.fr/app/**
+**Après des mois de développement, je suis fier d'annoncer qu'H Editor est terminé et en ligne : https://hylst.fr/app/**
 
-EditorX, c'est quoi ? Un **éditeur de code complet, directement dans votre navigateur** — sans installation, sans compte, sans serveur. Vous ouvrez l'URL, vous codez. C'est tout.
+H Editor, c'est quoi ? Un **éditeur de code complet, directement dans votre navigateur** — sans installation, sans compte, sans serveur. Vous ouvrez l'URL, vous codez. C'est tout.
 
 **Pourquoi ce projet ?** Parce qu'entre l'IDE lourd à installer et l'éditeur en ligne qui aspire vos données dans un cloud, il manquait une option simple : un vrai environnement de code, **100 % local**, où rien ne quitte jamais votre machine.
 
@@ -23,7 +23,7 @@ EditorX, c'est quoi ? Un **éditeur de code complet, directement dans votre navi
 
 💾 **Ne jamais rien perdre** — Sauvegarde automatique et incrémentale en local (localStorage + IndexedDB compressé), journal de reprise qui survit à un plantage, corbeille des 20 dernières suppressions, et détection des modifications concurrentes plutôt qu'écrasement silencieux.
 
-📲 **S'installer comme une app** — EditorX est une PWA : bouton « Installer » dans la barre d'état, fonctionnement **hors ligne** vérifié, raccourcis d'application, interface adaptée au mobile.
+📲 **S'installer comme une app** — H Editor est une PWA : bouton « Installer » dans la barre d'état, fonctionnement **hors ligne** vérifié, raccourcis d'application, interface adaptée au mobile.
 
 ### Ce qu'il ne fait pas — volontairement
 
@@ -40,13 +40,13 @@ Pas de backend, pas de compte, pas de télémétrie, **aucune requête vers un t
 
 Vos retours sont les bienvenus — bugs, idées, contributions. Et si le projet vous plaît, une ⭐ sur le dépôt fait toujours plaisir !
 
-*#opensource #webdev #frontend #react #typescript #PWA #EditorX*
+*#opensource #webdev #frontend #react #typescript #PWA #H Editor*
 
 ---
 
 ## ⚡ Version courte (X/Twitter — ~270 caractères)
 
-🎉 EditorX est terminé et en ligne !
+🎉 H Editor est terminé et en ligne !
 
 Un éditeur de code complet **dans votre navigateur** : moteur de VS Code, aperçu de site multi-fichiers avec console interactive, sauvegarde locale auto, hors ligne & installable (PWA). Sans compte, sans serveur, sans requête vers un tiers.
 
