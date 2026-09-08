@@ -50,10 +50,14 @@
     </g>
   </g>
 
-  <!-- Logo mark -->
+  <!-- Logo mark : <H> façon balise de code -->
   <g transform="translate(80, 100)">
     <rect x="0" y="0" width="72" height="72" rx="16" fill="url(#accent)"/>
-    <text x="36" y="51" text-anchor="middle" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif" font-size="42" font-weight="800" fill="#ffffff">H</text>
+    <text x="36" y="49" text-anchor="middle" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif" font-weight="800">
+      <tspan font-size="30" dy="-1.5" fill="#bfdbfe">&lt;</tspan>
+      <tspan font-size="46" fill="#ffffff">H</tspan>
+      <tspan font-size="30" dy="-1.5" fill="#bfdbfe">&gt;</tspan>
+    </text>
   </g>
 
   <!-- Headline -->

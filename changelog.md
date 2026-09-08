@@ -70,6 +70,14 @@ Le sous-chemin de déploiement passe de `/app/` à **`/heditor/`** (H pour Hylst
 Le build statique se place désormais dans `/heditor/` du serveur Nginx (Coolify ou autre) :
 `https://hylst.fr/heditor/`.
 
+### 🎨 Icône « balise de code » (Changed)
+
+Le « H » de l'icône, du favicon et du logo Open Graph est désormais **habillé en balise
+`<H>`** : un `H` blanc flanqué de deux chevrons (qui évoquent `</>`, l'emblème du code), sur
+le dégradé bleu conservé. Le `H` reste l'identité, mais l'icône évoque maintenant un éditeur
+d'un coup d'œil. Sources vectorielles (`public/icon.svg`, `public/og-image.svg`) puis PNG/ICO
+régénérés (`npm run icons:build`, `npm run og:build`).
+
 ---
 
 ## [1.7.0] - 2026-08-24
