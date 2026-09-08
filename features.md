@@ -268,7 +268,7 @@ Le décompte détaillé par catégorie évolue à chaque version ; se référer 
 | Blocage pendant une recherche (1 500 fichiers) | 2 146 ms | **43 ms** |
 | Nœuds DOM de l'explorateur (2 000 fichiers) | 2 001 | **43** |
 | Frappe (2 000 fichiers) | 146 ms/car. | **27 ms/car.** |
-| Précache du service worker | 10 241 Ko | **≈5,3 Mo** (36 entrées, mesuré 08/2026) |
+| Précache du service worker | 10 241 Ko | **≈5,5 Mo** (37 entrées, mesuré 09/2026) |
 | Chunk d'entrée | 2 321 Ko | **~180 Ko** |
 
 ### Compatibilité vérifiée

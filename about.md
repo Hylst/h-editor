@@ -146,6 +146,6 @@ qu'écrasée. Les vingt dernières suppressions restent restaurables.
 une iframe isolée, avec sa console rapatriée sous l'aperçu — sans que la page puisse toucher au
 stockage de l'éditeur.
 
-**La qualité est mesurée, pas affirmée.** 144 tests unitaires et 121 tests de bout en bout,
+**La qualité est mesurée, pas affirmée.** 147 tests unitaires et 121 tests de bout en bout,
 rejoués sur Chromium, Firefox, WebKit et un profil mobile. Chaque bug ayant réellement existé
 dispose de son test de non-régression, et les seuils de performance sont chiffrés dans la suite.
