@@ -111,7 +111,7 @@ const MonacoEditorInner = forwardRef<MonacoEditorRef, MonacoEditorProps>(
           <div className="max-w-sm space-y-3 text-center">
             <p className="text-lg font-medium text-editor-text">{file.name}</p>
             <p className="text-sm text-editor-text-muted">
-              Fichier binaire — conservé intact dans le projet et restitué à l’export ZIP, mais non
+              Fichier binaire, conservé intact dans le projet et restitué à l’export ZIP, mais non
               éditable comme du texte.
             </p>
           </div>
@@ -171,7 +171,7 @@ const MonacoEditorInner = forwardRef<MonacoEditorRef, MonacoEditorProps>(
             glyphMargin: true,
             folding: true,
             bracketPairColorization: { enabled: true },
-            ariaLabel: ariaLabel ?? `Éditeur de code — ${file.name}`,
+            ariaLabel: ariaLabel ?? `Éditeur de code (${file.name})`,
             accessibilitySupport: 'auto',
           }}
         />

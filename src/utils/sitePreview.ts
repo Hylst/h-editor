@@ -502,7 +502,7 @@ export const describeMissing = (missing: MissingResource): string => {
         : missing.kind === 'module'
           ? 'module'
           : 'ressource';
-  return `${missing.reference} — ${nature} introuvable, référencée par ${missing.sourcePath}`;
+  return `${missing.reference} (${nature} introuvable, référencée par ${missing.sourcePath})`;
 };
 
 /** Le fichier est-il un point d'entrée plausible pour un aperçu de site ? */

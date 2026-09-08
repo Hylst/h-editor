@@ -155,7 +155,7 @@ const StatusBar = ({
               className="hidden lg:inline"
               title={
                 usage.quota > 0
-                  ? `Projet : ${formatBytes(usage.workspaceBytes)} — origine : ${formatBytes(usage.usage)} sur ${formatBytes(usage.quota)} disponibles`
+                  ? `Projet : ${formatBytes(usage.workspaceBytes)}, origine : ${formatBytes(usage.usage)} sur ${formatBytes(usage.quota)} disponibles`
                   : `Projet : ${formatBytes(usage.workspaceBytes)}`
               }
             >

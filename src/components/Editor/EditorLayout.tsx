@@ -209,7 +209,7 @@ const EditorLayout = () => {
 
       const total = 1 + (template.extraFiles?.length ?? 0);
       toast.success(
-        total > 1 ? `« ${template.label} » créé — ${total} fichiers` : `« ${template.label} » créé`,
+        total > 1 ? `« ${template.label} » créé (${total} fichiers)` : `« ${template.label} » créé`,
         total > 1
           ? { description: 'Utilisez l’aperçu (Ctrl+Maj+V) pour tester le résultat.' }
           : undefined
@@ -270,7 +270,7 @@ const EditorLayout = () => {
 
     setIsBusy('Lecture du dossier…');
     const result = await importDirectory(({ processed, currentPath }) =>
-      setIsBusy(`Lecture du dossier… ${processed} fichier(s) — ${currentPath.slice(-40)}`)
+      setIsBusy(`Lecture du dossier… ${processed} fichier(s) (${currentPath.slice(-40)})`)
     );
     setIsBusy(null);
 
@@ -488,7 +488,7 @@ const EditorLayout = () => {
         tabsApi.openTab(id);
         toast.success(`« ${name} » ajouté au projet`, {
           description:
-            'Ce JSON n’était pas une sauvegarde de projet — il a été ajouté comme fichier ordinaire.',
+            'Ce JSON n’était pas une sauvegarde de projet, il a été ajouté comme fichier ordinaire.',
         });
         return;
       }
@@ -637,7 +637,7 @@ const EditorLayout = () => {
 
   const handleToggleZen = useCallback(() => {
     setZenMode((prev) => {
-      if (!prev) toast.success('Mode Zen activé — Échap pour quitter');
+      if (!prev) toast.success('Mode Zen activé, Échap pour quitter');
       return !prev;
     });
   }, []);

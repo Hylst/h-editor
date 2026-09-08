@@ -10,11 +10,11 @@ vos fichiers ne quittent jamais votre navigateur.
 
 ## Prise en main
 
-1. \`Ctrl + N\` — nouveau fichier
-2. \`Ctrl + O\` — ouvrir un fichier du disque
-3. \`Ctrl + P\` — aller à un fichier
-4. \`Ctrl + S\` — enregistrer sur le disque
-5. \`Ctrl + Maj + P\` — palette de commandes
+1. \`Ctrl + N\` : nouveau fichier
+2. \`Ctrl + O\` : ouvrir un fichier du disque
+3. \`Ctrl + P\` : aller à un fichier
+4. \`Ctrl + S\` : enregistrer sur le disque
+5. \`Ctrl + Maj + P\` : palette de commandes
 
 > Vos fichiers sont conservés automatiquement dans le navigateur
 > (métadonnées en localStorage, contenu en IndexedDB).
@@ -40,7 +40,7 @@ vos fichiers ne quittent jamais votre navigateur.
 
 ## Fonctionnalités
 
-- Éditeur **Monaco** (moteur de VS Code), embarqué — fonctionne **hors ligne**
+- Éditeur **Monaco** (moteur de VS Code), embarqué, fonctionne **hors ligne**
 - Coloration syntaxique pour **40+ langages**
 - Aperçu **Markdown** et **HTML** en direct
 - Explorateur avec dossiers, glisser-déposer, filtre

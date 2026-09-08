@@ -282,7 +282,7 @@ const PreviewPanel = ({
           <FileCode2 className="h-4 w-4 flex-shrink-0 text-primary" aria-hidden="true" />
           <span className="truncate">
             {isHtml ? 'Aperçu HTML' : 'Aperçu Markdown'}
-            {currentPageId && displayedFile ? ` — ${displayedFile.name}` : ''}
+            {currentPageId && displayedFile ? ` (${displayedFile.name})` : ''}
           </span>
           {missing.length > 0 && (
             <button
@@ -460,7 +460,7 @@ const PreviewPanel = ({
             >
               <div className="flex items-center justify-between border-b border-editor-border px-3 py-1">
                 <span className="text-xs font-medium text-editor-text-muted">
-                  Console — {entries.length} message{entries.length !== 1 ? 's' : ''}
+                  Console ({entries.length} message{entries.length !== 1 ? 's' : ''})
                 </span>
                 <Button
                   variant="ghost"

@@ -31,7 +31,7 @@ export const FILE_TEMPLATES: FileTemplate[] = [
     id: 'site-multipage',
     label: 'Site web complet (3 fichiers)',
     fileName: 'index.html',
-    description: 'Page, styles et script liés — prêt pour l’aperçu',
+    description: 'Page, styles et script liés, prêt pour l’aperçu',
     /** Ce modèle crée aussi `styles.css` et `app.js`, résolus par l’aperçu. */
     extraFiles: [
       {
@@ -114,7 +114,7 @@ import { computed, ref } from 'vue';
 
 const props = defineProps<{ titre: string }>();
 const compteur = ref(0);
-const resume = computed(() => \`\${props.titre} — \${compteur.value}\`);
+const resume = computed(() => \`\${props.titre} (\${compteur.value})\`);
 </script>
 
 <template>
@@ -214,7 +214,7 @@ dist/
 build/
 coverage/
 
-# Secrets — ne jamais commiter
+# Secrets, ne jamais commiter
 .env
 .env.local
 *.local
@@ -238,7 +238,7 @@ Thumbs.db
     description: 'Cas nominal, cas limite et cas d’erreur',
     content: `import { describe, expect, it } from 'vitest';
 
-/** Fonction sous test — à remplacer par un import réel. */
+/** Fonction sous test, à remplacer par un import réel. */
 const additionner = (a: number, b: number): number => a + b;
 
 describe('additionner', () => {

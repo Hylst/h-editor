@@ -7,8 +7,8 @@ const NotFound = () => {
   const location = useLocation();
 
   useEffect(() => {
-    console.error("404 — route inconnue :", location.pathname);
-    document.title = "404 — Page introuvable | H Editor";
+    console.error("404, route inconnue :", location.pathname);
+    document.title = "404, Page introuvable | H Editor";
   }, [location.pathname]);
 
   return (

@@ -122,7 +122,7 @@ export const useWorkspace = () => {
           const noms = pending.slice(0, 3).map((e) => e.fileName).join(', ');
           const reste = pending.length - 3;
           toast.warning('Modifications non enregistrées retrouvées', {
-            description: `${noms}${reste > 0 ? ` et ${reste} autre(s)` : ''} — la session précédente s’est interrompue avant la sauvegarde.`,
+            description: `${noms}${reste > 0 ? ` et ${reste} autre(s)` : ''}. La session précédente s’est interrompue avant la sauvegarde.`,
             duration: Infinity,
             action: {
               label: 'Restaurer',
@@ -148,7 +148,7 @@ export const useWorkspace = () => {
           const names = snapshot.missingContent.slice(0, 3).join(', ');
           const extra = snapshot.missingContent.length - 3;
           toast.warning('Contenu introuvable dans le stockage du navigateur', {
-            description: `${names}${extra > 0 ? ` et ${extra} autre(s)` : ''} — ces fichiers sont vides. Le stockage a probablement été effacé.`,
+            description: `${names}${extra > 0 ? ` et ${extra} autre(s)` : ''}. Ces fichiers sont vides. Le stockage a probablement été effacé.`,
             duration: 12000,
           });
         }

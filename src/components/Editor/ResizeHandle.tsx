@@ -96,7 +96,7 @@ const ResizeHandle = ({
       }}
       // Zone de saisie large (5 px) mais trait fin : confortable sans être visible.
       className="group relative w-1 flex-shrink-0 cursor-col-resize bg-editor-border transition-colors hover:bg-primary focus-visible:bg-primary"
-      title={`${label} — double-clic pour réinitialiser`}
+      title={`${label}, double-clic pour réinitialiser`}
     >
       <span className="absolute inset-y-0 -left-1 -right-1" aria-hidden="true" />
     </div>

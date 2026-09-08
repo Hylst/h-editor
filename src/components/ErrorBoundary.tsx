@@ -25,7 +25,7 @@ class ErrorBoundary extends Component<Props, State> {
   }
 
   componentDidCatch(error: Error, info: ErrorInfo) {
-    console.error('H Editor — erreur non rattrapée :', error, info.componentStack);
+    console.error('H Editor, erreur non rattrapée :', error, info.componentStack);
   }
 
   private handleReload = () => window.location.reload();
