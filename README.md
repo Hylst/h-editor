@@ -49,7 +49,6 @@ L'application est accessible sur **http://localhost:8080/heditor/**
 | [features.md](./features.md) | Liste détaillée des fonctionnalités avec statut |
 | [structure.md](./structure.md) | Architecture technique, conventions, design system |
 | [changelog.md](./changelog.md) | Historique des versions (Keep a Changelog) |
-| [todo.md](./todo.md) | Roadmap et tâches en cours |
 | [test_build_deploy.md](./test_build_deploy.md) | Guide complet : test local, build, déploiement Coolify/Nginx |
 
 ---
