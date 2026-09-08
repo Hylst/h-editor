@@ -23,12 +23,12 @@ dist-ssr
 *.sln
 *.sw?
 
-# Environment — secrets go in .env.local (never committed)
+# Environment - secrets go in .env.local (never committed)
 .env.local
 .env.*.local
 
-# Claude Code — permissions locales
-.claude/settings.local.json
+# Claude Code - permissions locales
+.claude/
 
 # Playwright
 /test-results/
@@ -36,5 +36,20 @@ dist-ssr
 /blob-report/
 /playwright/.cache/
 
-# Captures d'ecran de demo (artefacts regenerables : scripts/capture-screenshots.mjs)
+# Captures d ecran de demo (artefacts regenerables : scripts/capture-screenshots.mjs)
 captures/
+
+# Fichiers lies a la creation assistee par IA et documents internes (non publies)
+/agents.md
+/CLAUDE.md
+/claude.md
+/continue.md
+/annonce.md
+/plan.md
+/todo.md
+
+# Fichiers locaux sensibles (ne jamais publier)
+.env
+.env.local
+.env.*.local
+Editor-X-workspace.code-workspace
