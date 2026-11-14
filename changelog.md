@@ -11,6 +11,12 @@ et ce projet adhère au [Semantic Versioning](https://semver.org/lang/fr/).
 
 Améliorations PWA et affichage mobile.
 
+### 🔒 Dépendances de production à jour (Security, 14/11/2026)
+
+`npm audit fix` (sans `--force`) : `dompurify` 3.4.13 → 3.4.18, `markdown-it` 14.2.0 → 14.3.3 et
+dépendances transitives (`brace-expansion`, `glob`, `minimatch`, `postcss-selector-parser`,
+`source-map-js`). `npm audit --omit=dev` : 0 vulnérabilité, l'étape d'audit de la CI repasse.
+
 ### ⚖️ Mentions légales et contact (Added, 14/11/2026)
 
 Fenêtre « À propos » : bloc « Mentions légales » (éditeur non professionnel, hébergeur Hostinger,
