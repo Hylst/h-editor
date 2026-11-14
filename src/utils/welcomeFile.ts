@@ -5,8 +5,8 @@ export const WELCOME_FILE_NAME = 'bienvenue.md';
 
 const WELCOME_CONTENT = `# Bienvenue dans H Editor
 
-**H Editor** est un éditeur de code et de texte 100 % local : aucun serveur, aucun compte,
-vos fichiers ne quittent jamais votre navigateur.
+**H Editor** est un éditeur de code et de texte qui tourne dans votre navigateur : pas de
+compte, et vos fichiers ne quittent pas votre navigateur.
 
 ## Prise en main
 

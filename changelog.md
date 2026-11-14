@@ -17,8 +17,9 @@ Fenêtre « À propos » : bloc « Mentions légales » (éditeur non profession
 journaux du serveur conservés douze mois au plus, messagerie Infomaniak, ressources externes
 demandées par le code d’un aperçu HTML) et lien vers les mentions légales de la plateforme
 hylst.fr. Contact `geoffroy.streit@ik.me` (fenêtre « À propos », JSON-LD, `package.json`, `LICENSE`,
-documentation), assistance IA mentionnée. « Aucun serveur » remplacé par un texte exact : le
-serveur livre l’application, les fichiers restent dans le navigateur.
+documentation), assistance IA mentionnée. « Aucun serveur » remplacé par un texte exact dans la
+fenêtre « À propos » et le fichier de bienvenue : le serveur livre l’application, les fichiers
+restent dans le navigateur.
 
 ### ✅ Page de fallback hors ligne (Added)
 
