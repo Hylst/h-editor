@@ -3,7 +3,7 @@
   "private": true,
   "version": "1.7.0",
   "description": "H Editor - Éditeur de code en ligne moderne basé sur Monaco Editor",
-  "author": "Geoffroy Streit <geoffroy.streit@gmail.com>",
+  "author": "Geoffroy Streit <geoffroy.streit@ik.me>",
   "license": "MIT",
   "homepage": "https://hylst.fr/heditor",
   "type": "module",

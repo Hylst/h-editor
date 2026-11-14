@@ -113,7 +113,7 @@ Le projet est désormais hébergé chez son auteur sous l'URL [hylst.fr/heditor]
 
 **Geoffroy Streit**
 - 🌐 [hylst.fr](https://hylst.fr)
-- 📧 [geoffroy.streit@gmail.com](mailto:geoffroy.streit@gmail.com)
+- 📧 [geoffroy.streit@ik.me](mailto:geoffroy.streit@ik.me)
 - 🐦 [@hylst](https://twitter.com/hylst)
 
 ---

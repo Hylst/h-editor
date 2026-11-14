@@ -1,4 +1,4 @@
-import { Info, Keyboard, Lightbulb, ShieldCheck, User } from 'lucide-react';
+import { Info, Keyboard, Lightbulb, Scale, ShieldCheck, User } from 'lucide-react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { ScrollArea } from '@/components/ui/scroll-area';
@@ -106,7 +106,7 @@ const InfoDialog = ({ open, onOpenChange }: InfoDialogProps) => (
                 Confidentialité
               </h3>
               <ul className="list-inside list-disc space-y-1 text-sm text-muted-foreground">
-                <li>Aucun serveur, aucun compte, aucune télémétrie.</li>
+                <li>Pas de compte, pas de cookie, aucune télémétrie : le serveur livre l’application.</li>
                 <li>Monaco est embarqué dans l’application : aucun appel à un CDN tiers.</li>
                 <li>
                   Vos fichiers restent dans le navigateur : métadonnées en localStorage, contenu en
@@ -119,17 +119,67 @@ const InfoDialog = ({ open, onOpenChange }: InfoDialogProps) => (
             <div className="space-y-2">
               <h3 className="font-semibold">Technologies</h3>
               <p className="text-sm text-muted-foreground">
-                React 18, TypeScript, Vite, Monaco Editor, Tailwind CSS, Radix UI, Prettier, JSZip.
-                le tout sans backend : vos données ne quittent jamais votre navigateur.
+                React 18, TypeScript, Vite, Monaco Editor, Tailwind CSS, Radix UI, Prettier, JSZip,
+                le tout sans backend : vos fichiers ne quittent pas votre navigateur.
               </p>
             </div>
 
             <div className="space-y-1">
               <h3 className="font-semibold">Créateur</h3>
               <p className="text-sm text-muted-foreground">
-                {APP_AUTHOR}, licence MIT. L’outil est offert, sans publicité ni compte. Vos
-                retours, idées et rapports de bugs sont très bienvenus : c’est ce qui le rend
-                meilleur, un commit à la fois.
+                {APP_AUTHOR}, licence MIT, avec une assistance IA. L’outil est offert, sans
+                publicité ni compte. Vos retours, idées et rapports de bugs sont très bienvenus à{' '}
+                <a
+                  href="mailto:geoffroy.streit@ik.me"
+                  className="text-primary underline-offset-2 hover:underline"
+                >
+                  geoffroy.streit@ik.me
+                </a>
+                {' '}: c’est ce qui le rend meilleur, un commit à la fois.
+              </p>
+            </div>
+
+            <div
+              id="mentions-legales"
+              className="space-y-2 rounded-lg border border-border bg-muted/40 p-4"
+            >
+              <h3 className="flex items-center gap-2 font-semibold">
+                <Scale className="h-4 w-4 text-primary" aria-hidden="true" />
+                Mentions légales
+              </h3>
+              <ul className="list-inside list-disc space-y-1 text-sm text-muted-foreground">
+                <li>Éditeur : Geoffroy Streit, site personnel édité à titre non professionnel.</li>
+                <li>
+                  Hébergement : Hostinger International Limited, 61 Lordou Vironos Street, 6023
+                  Larnaca, Chypre (serveur privé virtuel situé au Royaume-Uni).
+                </li>
+                <li>
+                  Journaux du serveur : comme pour toute page web, le serveur enregistre l’adresse
+                  IP, la date, la page demandée et le navigateur, pour la sécurité et le
+                  diagnostic. Ils sont conservés douze mois au plus.
+                </li>
+                <li>
+                  Messagerie : les messages envoyés à l’adresse de contact sont hébergés par
+                  Infomaniak Network SA (Suisse).
+                </li>
+                <li>
+                  Un aperçu HTML charge les ressources que votre propre code demande (images,
+                  scripts, polices) : c’est alors votre page qui contacte ces sites.
+                </li>
+              </ul>
+              <p className="text-sm">
+                <a
+                  href="https://hylst.fr/mentions-legales.html"
+                  target="_blank"
+                  rel="noopener"
+                  className="text-primary underline underline-offset-2 hover:no-underline"
+                >
+                  Mentions légales complètes de la plateforme hylst.fr
+                </a>
+                <span className="text-muted-foreground">
+                  {' '}
+                  (droits sur les données, réclamation auprès de la CNIL).
+                </span>
               </p>
             </div>
           </TabsContent>

@@ -215,7 +215,7 @@ MIT — voir [LICENSE](./LICENSE).
 ## 👤 Auteur
 
 **Geoffroy Streit** ([hylst.fr](https://hylst.fr))
-📧 [geoffroy.streit@gmail.com](mailto:geoffroy.streit@gmail.com)
+📧 [geoffroy.streit@ik.me](mailto:geoffroy.streit@ik.me)
 
 H Editor est un projet personnel open-source. Vos retours, idées et contributions sont les bienvenus.
 

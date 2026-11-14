@@ -11,6 +11,15 @@ et ce projet adhère au [Semantic Versioning](https://semver.org/lang/fr/).
 
 Améliorations PWA et affichage mobile.
 
+### ⚖️ Mentions légales et contact (Added, 14/11/2026)
+
+Fenêtre « À propos » : bloc « Mentions légales » (éditeur non professionnel, hébergeur Hostinger,
+journaux du serveur conservés douze mois au plus, messagerie Infomaniak, ressources externes
+demandées par le code d’un aperçu HTML) et lien vers les mentions légales de la plateforme
+hylst.fr. Contact `geoffroy.streit@ik.me` (fenêtre « À propos », JSON-LD, `package.json`, `LICENSE`,
+documentation), assistance IA mentionnée. « Aucun serveur » remplacé par un texte exact : le
+serveur livre l’application, les fichiers restent dans le navigateur.
+
 ### ✅ Page de fallback hors ligne (Added)
 
 `public/offline.html` est désormais servie par le service worker (`navigateFallback`) quand une
