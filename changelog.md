@@ -11,6 +11,9 @@ et ce projet adhère au [Semantic Versioning](https://semver.org/lang/fr/).
 
 Améliorations PWA et affichage mobile.
 
+### Maintenance (17/11/2026)
+- Source regroupée dans `D:\0CODE\0FINAL\it\heditor`. L'exemple de clonage de `test_build_deploy.md` pointe désormais vers ce dossier et vers le dépôt `Hylst/h-editor` (il citait encore l'ancien nom `editorx`). Build inchangé.
+
 ### 🔒 Dépendances de production à jour (Security, 14/11/2026)
 
 `npm audit fix` (sans `--force`) : `dompurify` 3.4.13 → 3.4.18, `markdown-it` 14.2.0 → 14.3.3 et

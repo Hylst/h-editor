@@ -37,9 +37,9 @@ git --version
 **Option 1 — Cloner avec Git** (recommandé) :
 
 ```powershell
-cd D:\0CODE\ClaudeCode
-git clone https://github.com/hylst/editorx.git editorx
-cd editorx
+cd D:\0CODE\0FINAL\it
+git clone https://github.com/Hylst/h-editor.git heditor
+cd heditor
 ```
 
 **Option 2 — Télécharger un ZIP** depuis GitHub, le dézipper, ouvrir un terminal PowerShell dans le dossier.
