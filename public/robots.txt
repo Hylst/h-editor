@@ -27,4 +27,4 @@ Disallow: /
 User-agent: ClaudeBot
 Disallow: /
 
-Sitemap: https://hylst.fr/heditor/sitemap.xml
+Sitemap: %SITE_URL%/heditor/sitemap.xml

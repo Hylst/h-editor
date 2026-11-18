@@ -5,6 +5,36 @@ import path from "path";
 import { readFileSync } from "fs";
 import { VitePWA } from "vite-plugin-pwa";
 
+import fsSite from 'node:fs';
+import pathSite from 'node:path';
+import type { Plugin as PluginSite } from 'vite';
+
+// Domaine du site, lu au build : SITE_URL (https://hylst.fr par defaut). Il remplace %SITE_URL% dans index.html
+// et dans les fichiers publics listes, et __SITE_URL__ dans le code, pour que l'app change de domaine sans toucher au code.
+const SITE_URL = (process.env.SITE_URL || 'https://hylst.fr').replace(/\/+$/, '');
+const siteUrl = (fichiersPublics: string[]): PluginSite => {
+  let outDir = '';
+  return {
+    name: 'site-url',
+    // __SITE_URL__ : le meme domaine pour le code de l'app (declare dans vite-env.d.ts)
+    config: () => ({ define: { __SITE_URL__: JSON.stringify(SITE_URL) } }),
+    configResolved(config) {
+      outDir = pathSite.resolve(config.root, config.build.outDir);
+    },
+    transformIndexHtml: { order: 'pre', handler: (html) => html.replaceAll('%SITE_URL%', SITE_URL) },
+    writeBundle: {
+      order: 'pre',
+      sequential: true,
+      handler() {
+        for (const f of fichiersPublics) {
+          const p = pathSite.join(outDir, f);
+          fsSite.writeFileSync(p, fsSite.readFileSync(p, 'utf8').replaceAll('%SITE_URL%', SITE_URL));
+        }
+      },
+    },
+  };
+};
+
 const pkg = JSON.parse(readFileSync(path.resolve(__dirname, "package.json"), "utf-8"));
 
 /** Couleur de thème unique, partagée par index.html et le manifeste. */
@@ -31,7 +61,7 @@ export default defineConfig(() => ({
     // Évite la version « v1.0 » codée en dur dans la barre d'état.
     __APP_VERSION__: JSON.stringify(pkg.version),
   },
-  plugins: [
+  plugins: [siteUrl(['sitemap.xml', 'robots.txt']),
     versionInjector,
     react(),
     VitePWA({
