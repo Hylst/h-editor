@@ -3,7 +3,7 @@
 Un éditeur de code en ligne moderne, rapide et 100 % front-end, construit avec **React 18**, **Monaco Editor** et **Vite**.
 
 ![Version](https://img.shields.io/badge/version-1.7.0-blue.svg)
-![License](https://img.shields.io/badge/license-MIT-green.svg)
+![License](https://img.shields.io/badge/license-AGPL--3.0--or--later-green.svg)
 ![React](https://img.shields.io/badge/React-18.3-61dafb.svg)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.8-3178c6.svg)
 ![Vite](https://img.shields.io/badge/Vite-8.0-646cff.svg)
@@ -208,7 +208,7 @@ Les conventions (lint, tests, format des commits) sont décrites dans [CONTRIBUT
 
 ## 📄 Licence
 
-MIT — voir [LICENSE](./LICENSE).
+AGPL-3.0-or-later. Voir [LICENSE](./LICENSE).
 
 ---
 
